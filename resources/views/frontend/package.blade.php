@@ -40,12 +40,11 @@
                         <p class ="text-primary pl-4 font-bold mb-4 ">
                             Rp 100.000
                         </p>
-                        <p class="text-base pl-4 mb-8  pr-4 font-semibold text-gray-900">
+                        <p class="text-base pl-4   pr-4 font-semibold text-gray-900">
                             regular package from kecak fire and trance dance permomance include .....
                         </p>
-                        <a href="detailpackage" class="text-base ml-4 font-semibold text-white bg-black 
-                        py-3 px-8 rounded-md hover:shadow-lg hover:bg-opacity-80 transition duration-300 ease-in-out">
-                            Detail</a>
+                        <p class="text-sm pl-4 mb-8 mt-4  pr-4 font-reguler text-gray-900"> Bali-Taman Kaja Ubud</p>
+                        
                     </div>
 
                    <div class="relative overflow-hidden bg-white rounded-xl group mr-[30px] ">
@@ -63,12 +62,11 @@
                         <p class ="text-primary pl-4 font-bold mb-4 ">
                             Rp 100.000
                         </p>
-                        <p class="text-base pl-4 mb-8  pr-4 font-semibold text-gray-900">
+                        <p class="text-base pl-4   pr-4 font-semibold text-gray-900">
                             regular package from kecak fire and trance dance permomance include .....
                         </p>
-                        <a href="detailpackage" class="text-base ml-4 font-semibold text-white bg-black 
-                        py-3 px-8 rounded-md hover:shadow-lg hover:bg-opacity-80 transition duration-300 ease-in-out">
-                            Detail</a>
+                        <p class="text-sm pl-4 mb-8 mt-4  pr-4 font-reguler text-gray-900"> Bali-Taman Kaja Ubud</p>
+                        
                     </div>
 
                     <div class="relative overflow-hidden bg-white rounded-xl group mr-[30px] ">
@@ -77,16 +75,20 @@
                             <img src='dist/assets/rama.jpeg' alt="rama sinta"
                                 class="h-full w-full object-cover object-center">
                         </div>
-                        <h3 class="mt-4 text-md pl-4 font-bold text-black dark:text-white">
-                            <a href="#">
+                        <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
+                            <a href="detailpackage">
                                 <span class="absolute inset-0"></span>
                                 Regular Package
                             </a>
-                        </h3><br>
-                        <p class="text-base pl-4 mb-8  pr-4 font-semibold text-gray-900">
-                            Prince Rama, heir to the throne of the kingdom of Ayodya,
-                            and his Wife Sita have been banished from the Kingdom by
-                            King Dasarata as a result of trickery by Rama’s stepmom</p>
+                        </h3>
+                        <p class ="text-primary pl-4 font-bold mb-4 ">
+                            Rp 100.000
+                        </p>
+                        <p class="text-base pl-4   pr-4 font-semibold text-gray-900">
+                            regular package from kecak fire and trance dance permomance include .....
+                        </p>
+                        <p class="text-sm pl-4 mb-8 mt-4  pr-4 font-reguler text-gray-900"> Bali-Taman Kaja Ubud</p>
+                        
                     </div>
                     <div class="relative overflow-hidden bg-white rounded-xl group mr-[30px] ">
                         <div
@@ -94,16 +96,20 @@
                             <img src='dist/assets/rama.jpeg' alt="rama sinta"
                                 class="h-full w-full object-cover object-center">
                         </div>
-                        <h3 class="mt-4 text-md pl-4 font-bold text-black dark:text-white">
-                            <a href="#">
+                        <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
+                            <a href="detailpackage">
                                 <span class="absolute inset-0"></span>
                                 Regular Package
                             </a>
-                        </h3><br>
-                        <p class="text-base pl-4 mb-8  pr-4 font-semibold text-gray-900">
-                            Prince Rama, heir to the throne of the kingdom of Ayodya,
-                            and his Wife Sita have been banished from the Kingdom by
-                            King Dasarata as a result of trickery by Rama’s stepmom</p>
+                        </h3>
+                        <p class ="text-primary pl-4 font-bold mb-4 ">
+                            Rp 100.000
+                        </p>
+                        <p class="text-base pl-4   pr-4 font-semibold text-gray-900">
+                            regular package from kecak fire and trance dance permomance include .....
+                        </p>
+                        <p class="text-sm pl-4 mb-8 mt-4  pr-4 font-reguler text-gray-900"> Bali-Taman Kaja Ubud</p>
+                        
                     </div>
                     <div class="relative overflow-hidden bg-white rounded-xl group mr-[30px] ">
                         <div
@@ -111,16 +117,20 @@
                             <img src='dist/assets/rama.jpeg' alt="rama sinta"
                                 class="h-full w-full object-cover object-center">
                         </div>
-                        <h3 class="mt-4 text-md pl-4 font-bold text-black dark:text-white">
-                            <a href="#">
+                        <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
+                            <a href="detailpackage">
                                 <span class="absolute inset-0"></span>
                                 Regular Package
                             </a>
-                        </h3><br>
-                        <p class="text-base pl-4 mb-8  pr-4 font-semibold text-gray-900">
-                            Prince Rama, heir to the throne of the kingdom of Ayodya,
-                            and his Wife Sita have been banished from the Kingdom by
-                            King Dasarata as a result of trickery by Rama’s stepmom</p>
+                        </h3>
+                        <p class ="text-primary pl-4 font-bold mb-4 ">
+                            Rp 100.000
+                        </p>
+                        <p class="text-base pl-4   pr-4 font-semibold text-gray-900">
+                            regular package from kecak fire and trance dance permomance include .....
+                        </p>
+                        <p class="text-sm pl-4 mb-8 mt-4  pr-4 font-reguler text-gray-900"> Bali-Taman Kaja Ubud</p>
+                        
                     </div>
 
 
