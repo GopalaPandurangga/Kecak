@@ -39,7 +39,7 @@
                             It can take several form and the version here presented is the Sanghyang Djaran.
                         </p>
 
-                        <a href=""
+                        <a href="about"
                             class="text-base font-semibold text-white bg-black
                         py-3 px-8 rounded-full hover:shadow-lg hover:bg-opacity-80 transition duration-300 ease-in-out">Read
                             More</a>
@@ -305,7 +305,7 @@
                     <div class="w-full self-center dark:text-white md:flex-1 md:mr-10 mx-10  lg:w-1/2">
                         <h1 class="font-pt-serif text-lg font-bold mb-5">
                             Visitors Testimonial <br>
-                            <div class="text-sm font-montserrat text-gray-500">{{ Auth::user()->name }}</div>
+                            <div class="text-sm font-montserrat text-gray-500">Gopala Pandurangga</div>
                         </h1>
                         <p class="md:text-xl text-black font-bold  lg:text-left text-center mb-7">
                             The Show is just to cool, love it, <br>
@@ -319,9 +319,15 @@
                             ridiculus mus. Donec quam felis, ultricies nec,
                             pellentesque eu, pretium quis, sem.
                         </p>
-                        <p class="font-pt-serif text-md font-bold lg:text-left text-center mb-10 lg:mb-10">
-                            Rate <br> <span class="font-montserrat text-primary font-bold text-md">9,5/10</span>
-                        </p>
+                        <p class="font-pt-serif text-md font-bold lg:text-left text-center ">
+                            Rate 
+                            <div class="flex items-center mr-2 mb-8">
+                            <span class="text-yellow-400">★</span>
+                            <span class="text-yellow-400">★</span>
+                            <span class="text-yellow-400">★</span>
+                            <span class="text-yellow-400">★</span>
+                            <span class="text-gray-400">☆</span>
+                        </div>
 
                         <a href="testi" class="text-base font-semibold text-white bg-black
                         py-3 px-8 rounded-md hover:shadow-lg hover:bg-opacity-80 transition duration-300 ease-in-out">

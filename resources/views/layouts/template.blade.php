@@ -22,7 +22,7 @@
         <div class="container  ">
             <div class="flex items-center justify-between relative">
                 <div class="">
-                    <a href="home" class="font-bold font-pt-serif text-2xl px-10 lg:px-0 text-black dark:text-white block py-4">Kecak</a>
+                    <a href="landingpage" class="font-bold font-pt-serif text-2xl px-10 lg:px-0 text-black dark:text-white block py-4">Kecak</a>
                 </div>
                 <div class="flex items-center px-10 lg:px-2">
                     <div id="hamburger" name="hamburger" type="button" class="block lg:hidden absolute right-10">
@@ -39,7 +39,7 @@
                         <ul class="block lg:flex ">
 
                             <li class="group">
-                                <a href="home "
+                                <a href="/"
                                     class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex">Home</a>
                             </li>
                             <li class="group">
@@ -81,7 +81,7 @@
                                     class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex ">Package</a>
                             </li>
                             <li class="group">
-                                <a href="{{route('kontak2')}}"
+                                <a href="kontak2"
                                     class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex ">Contact</a>
                             </li>
                             <li class="flex items-center">
@@ -98,41 +98,7 @@
                                 </div>
                             </li>
 
-                            <li class="group ">
-                                <x-dropdown align="right" width="40">
-                                    <x-slot name="trigger">
-                                        <button
-                                            class=" items-center py-2 mx-4 flex border border-transparent text-sm leading-4  font-medium rounded-md text-black dark:text-white  hover:text-primary transition duration-300 focus:outline-none  ease-in-out ">
-                                            <div>{{ Auth::user()->name }}</div>
-
-                                            <div class="ml-1">
-                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd"
-                                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd" />
-                                                </svg>
-                                            </div>
-                                        </button>
-                                    </x-slot>
-
-                                    <x-slot name="content">
-                                        <x-dropdown-link :href="route('profile.edit')">
-                                            {{ __('Profile') }}
-                                        </x-dropdown-link>
-
-                                        <!-- Authentication -->
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-
-                                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                              this.closest('form').submit();">
-                                                {{ __('Log Out') }}
-                                            </x-dropdown-link>
-                                        </form>
-                                    </x-slot>
-                                </x-dropdown>
-                            </li>
+                          
                             
                         </ul>
                     </nav>
