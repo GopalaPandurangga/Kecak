@@ -46,16 +46,24 @@
                     <div class="w-full self-center dark:text-white md:flex-1 md:mr-10 mx-20 my-20 lg:my-20 lg:w-1/2">
                         <h1 class="text-4xl font-bold mb-4 font-pt-serif">Reguler Package</h1>
                         <div class="">
-                            <h2 class="text-2xl font-bold text-primary mb-8">Rp 100.000</h2>
+                            <h2 class="text-2xl font-bold text-primary ">Rp 100.000</h2>
                         </div>
+                        <div class="flex items-center mr-2 mb-8">
+              <span class="text-yellow-400">★</span>
+              <span class="text-yellow-400">★</span>
+              <span class="text-yellow-400">★</span>
+              <span class="text-yellow-400">★</span>
+              <span class="text-gray-400">☆</span>
+            </div>
                         <p class="text-gray-700 mb-16">This package is the most frequently purchased package, because it is available both online and offline. 
                             This package is the standard package for the Kecak fire and trance dance performance.</p>
+                            
                         <div class="mt-auto mb-4">
                         <a href="kontak2" class="bg-dark hover:bg-primary text-white px-4 py-2 rounded transition duration-300">Buy Now</a>
                         </div>
                     </div>
                 </div>
-                <h3 class="text-2xl mt-20 font-bold mb-2">Comment</h3>
+                <h3 class="text-2xl mt-20 font-bold mb-4">Comment</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white shadow-md rounded p-4">
                         <blockquote>

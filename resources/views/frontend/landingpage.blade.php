@@ -39,7 +39,7 @@
                             It can take several form and the version here presented is the Sanghyang Djaran.
                         </p>
 
-                        <a href=""
+                        <a href="about"
                             class="text-base font-semibold text-white bg-black
                         py-3 px-8 rounded-full hover:shadow-lg hover:bg-opacity-80 transition duration-300 ease-in-out">Read
                             More</a>
@@ -181,15 +181,13 @@
         <!--maincast end-->
 
         <!-- package -->
-        <section id="portofolio" class=" dark:bg-dark">
+        <section id="package" class=" dark:bg-dark">
             <div class="container items-center justify-center mx-auto py-36">
                 <div class="flex flex-col items-center gap-3">
-                    <h1 class="text-black dark:text-white font-pt-serif font-bold text-3xl mb-4">Package</h1>
-                    <h1 class=" font-sans font-semibold text-3xl text-center dark:text-white ">Several Package Option
+                    <h1 class="text-black dark:text-white font-pt-serif font-bold text-3xl mb-2">Package</h1>
+                    <h1 class=" font-sans font-semibold text-3xl text-center text-gray-500 dark:text-white mb-4 ">Several Package Option
                     </h1>
-                    <p class="lg:w-1/2 text-center dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Ipsam minus quia
-                        molestias nisi beatae quisquam!.</p>
+                    <p class="lg:w-1/2 text-center text-xl dark:text-white">Here we summarize the package options that are most often purchased by website visitors</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-20">
                     <div
@@ -305,7 +303,7 @@
                     <div class="w-full self-center dark:text-white md:flex-1 md:mr-10 mx-10  lg:w-1/2">
                         <h1 class="font-pt-serif text-lg font-bold mb-5">
                             Visitors Testimonial <br>
-                            <div class="text-sm font-montserrat text-gray-500">{{ Auth::user()->name }}</div>
+                            <div class="text-sm font-montserrat text-gray-500">Gopala Pandurangga</div>
                         </h1>
                         <p class="md:text-xl text-black font-bold  lg:text-left text-center mb-7">
                             The Show is just to cool, love it, <br>
@@ -319,9 +317,15 @@
                             ridiculus mus. Donec quam felis, ultricies nec,
                             pellentesque eu, pretium quis, sem.
                         </p>
-                        <p class="font-pt-serif text-md font-bold lg:text-left text-center mb-10 lg:mb-10">
-                            Rate <br> <span class="font-montserrat text-primary font-bold text-md">9,5/10</span>
-                        </p>
+                        <p class="font-pt-serif text-md font-bold lg:text-left text-center ">
+                            Rate 
+                            <div class="flex items-center mr-2 mb-8">
+                            <span class="text-yellow-400">★</span>
+                            <span class="text-yellow-400">★</span>
+                            <span class="text-yellow-400">★</span>
+                            <span class="text-yellow-400">★</span>
+                            <span class="text-gray-400">☆</span>
+                        </div>
 
                         <a href="testi" class="text-base font-semibold text-white bg-black
                         py-3 px-8 rounded-md hover:shadow-lg hover:bg-opacity-80 transition duration-300 ease-in-out">
