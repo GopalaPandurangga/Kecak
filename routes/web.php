@@ -18,9 +18,9 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,10 +36,10 @@ Route::middleware('auth')->group(function () {
 
 // home controller
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/about', [HomeController::class, 'about'])->middleware('auth:sanctum', 'verified')->name('about');
-Route::get('/package', [HomeController::class, 'package'])->middleware('auth:sanctum', 'verified')->name('package');
-Route::get('/kontakkk', [HomeController::class, 'kontakkk'])->middleware('auth:sanctum', 'verified')->name('kontakkk');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/package', [HomeController::class, 'package'])->name('package');
+Route::get('/kontakkk', [HomeController::class, 'kontakkk'])->name('kontakkk');
 Route::get('/detailpackage', [HomeController::class, 'detailpackage'])->name('detailpackage');
 Route::get('/galery', [HomeController::class, 'galery'])->name('galery');
 
@@ -49,11 +49,11 @@ Route::get('/testi', [BeritaController::class, 'testi'])->middleware('auth:sanct
 Route::resource('berita', BeritaController::class);
 // package controller
 Route::get('/pkgg', [PackageController::class, 'index'])->middleware('auth:sanctum', 'verified')->name('pkgg');
-Route::get('/kontak2', [PackageController::class, 'kontak2'])->middleware('auth:sanctum', 'verified')->name('kontak2');
+Route::get('/kontak2', [PackageController::class, 'kontak2'])->name('kontak2');
 Route::resource('paket', PackageController::class);
 // contact
 Route::get('/kontak', [ContactController::class, 'index'])->middleware('auth:sanctum', 'verified')->name('kontak');
-Route::get('/kontak2', [ContactController::class, 'kontak2'])->middleware('auth:sanctum', 'verified')->name('kontak2');
+Route::get('/kontak2', [ContactController::class, 'kontak2'])->name('kontak2');
 Route::resource('contact', ContactController::class);
 
 Route::get('/livewire',function(){
