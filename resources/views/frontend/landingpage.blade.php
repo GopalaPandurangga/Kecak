@@ -181,15 +181,13 @@
         <!--maincast end-->
 
         <!-- package -->
-        <section id="portofolio" class=" dark:bg-dark">
+        <section id="package" class=" dark:bg-dark">
             <div class="container items-center justify-center mx-auto py-36">
                 <div class="flex flex-col items-center gap-3">
-                    <h1 class="text-black dark:text-white font-pt-serif font-bold text-3xl mb-4">Package</h1>
-                    <h1 class=" font-sans font-semibold text-3xl text-center dark:text-white ">Several Package Option
+                    <h1 class="text-black dark:text-white font-pt-serif font-bold text-3xl mb-2">Package</h1>
+                    <h1 class=" font-sans font-semibold text-3xl text-center text-gray-500 dark:text-white mb-4 ">Several Package Option
                     </h1>
-                    <p class="lg:w-1/2 text-center dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Ipsam minus quia
-                        molestias nisi beatae quisquam!.</p>
+                    <p class="lg:w-1/2 text-center text-xl dark:text-white">Here we summarize the package options that are most often purchased by website visitors</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-20">
                     <div
