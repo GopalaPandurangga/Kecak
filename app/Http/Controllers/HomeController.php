@@ -7,16 +7,15 @@ use App\Models\Package;
 
 class HomeController extends Controller
 {
-    public function index (){
-        $package = Package::all();
-        return view('frontend.landingpage', compact( 'package'));
+public function index (){
+    
 }
 public function about (){
     return view('frontend.about');
 }
 public function package (){
-    $packages = Package::all ();
-    return view('frontend.package', compact('packages'));
+    
+    return view('frontend.package');
 }
 
 

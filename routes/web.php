@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LandingPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ use App\Http\Controllers\ContactController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/', [LandingPageController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,7 +38,7 @@ Route::middleware('auth')->group(function () {
 
 // home controller
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/package', [HomeController::class, 'package'])->name('package');
 Route::get('/kontakkk', [HomeController::class, 'kontakkk'])->name('kontakkk');

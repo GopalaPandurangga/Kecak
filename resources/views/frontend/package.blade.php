@@ -34,7 +34,7 @@
                         <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
                             <a href="detailpackage">
                                 <span class="absolute inset-0"></span>
-                                Regular Package
+                                Child
                             </a>
                         </h3>
                         <p class ="text-primary pl-4 font-bold mb-4 ">
@@ -78,7 +78,7 @@
                         <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
                             <a href="detailpackage">
                                 <span class="absolute inset-0"></span>
-                                Regular Package
+                                Prince Package
                             </a>
                         </h3>
                         <p class ="text-primary pl-4 font-bold mb-4 ">
@@ -99,7 +99,7 @@
                         <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
                             <a href="detailpackage">
                                 <span class="absolute inset-0"></span>
-                                Regular Package
+                                King Package
                             </a>
                         </h3>
                         <p class ="text-primary pl-4 font-bold mb-4 ">
@@ -120,7 +120,7 @@
                         <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
                             <a href="detailpackage">
                                 <span class="absolute inset-0"></span>
-                                Regular Package
+                                God Package
                             </a>
                         </h3>
                         <p class ="text-primary pl-4 font-bold mb-4 ">

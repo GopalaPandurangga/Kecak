@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('kecak',[kecakcontroller::class,'index'])->name ('kecak');
+Route::get('kecak',[kecakcontroller::class, 'index'])->name ('kecak');
+Route::post('kecak',[kecakcontroller::class, 'store'])->name ('kecak post');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
