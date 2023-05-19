@@ -56,9 +56,8 @@ class ContactController extends Controller
             'description'=>'required',
             'cover'=>'required|mimes:jpg,bmp,png|max:2048'
         ],$message);
-        //$fileName = time().$request->file('cover')->getClientOriginalName();
+        // $fileName = time().$request->file('cover')->getClientOriginalName();
         $path = $request -> file('cover')->store('covers');
-        $validasi['contact_id']=Auth::id();
         $validasi['cover']=$path;
         Contact::create($validasi);
         return redirect('kontak')->with('success','Data Successfully save');

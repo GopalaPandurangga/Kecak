@@ -32,8 +32,9 @@
                 @foreach ($contact as $contacts)
                     <div class="group relative h-full w-full overflow-hidden rounded-lg bg-white shadow-2xl">
                         <div
-                            class="flex  h-80 w-full overflow-hidden  bg-violet-300 shadow-2xl group-hover:bg-black transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                            <img src='dist/assets/rama.jpeg' alt="rama sinta"
+                            class="flex  h-80 w-full overflow-hidden  
+                              group-hover:bg-black transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+                            <img src="{{asset('storage/'.$contacts->cover)}}" alt="gambar"
                                 class="mx-auto my-10 rounded-full shadow-2xl w-40 h-40 object-cover border-4 border-white">
                         </div>
                         <div class="px-4 my-4">
@@ -46,9 +47,7 @@
                             <p class="text-base font-semibold text-gray-900">
                             {{$contacts -> description}}</p>
                         </div>
-                        <button class="h-10 px-6 mb-6 mx-4 shadow-2xl  font-semibold rounded-lg bg-black text-white" type="submit">
-                            Contact Now
-                        </button>
+                        
 
                     </div>
 

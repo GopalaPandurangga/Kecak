@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Berita;
+use App\Models\LandingPage;
 
-class kecakcontroller extends Controller
+class LandingPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class kecakcontroller extends Controller
     public function index()
     {
         //
-        $data = Berita::paginate(5);    
-        return response()->json($data);
+        $datas = LandingPage::all();
+        return view('frontend.landingpage', compact('datas'));
     }
 
     /**
@@ -39,39 +38,6 @@ class kecakcontroller extends Controller
     public function store(Request $request)
     {
         //
-        $validasi=$request -> validate([
-            'user_id'=>'required',
-            'title'=>'required|unique:beritas|max:255',
-            'testimonial'=>'required',
-            'messages'=>'required',
-            'rate'=>'required',
-        ]);
-        try {
-        $response = Berita::create($validasi);
-        return response()->json([
-            'success'=> true,
-            'message'=>'success',
-            'body'=>$response
-        ]);
-        // if ($response!=null){
-        //     return response()->json([
-        //         'success'=> true,
-        //         'message'=>'success'
-        //     ]);
-        // }else{
-        //     return response()->json([
-        //         'success'=> false,
-        //         'message'=>'tidak tersimpan'
-        //     ]);
-        // }
-
-        } catch (\Throwable $th) {
-            return response()->json([
-                'success'=> false,
-                'message'=>'error',
-                'errors'=>$th->getMessage()
-            ]);
-        }
     }
 
     /**
