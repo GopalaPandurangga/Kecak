@@ -10,13 +10,6 @@ class HomeController extends Controller
 public function index (){
     
 }
-public function about (){
-    return view('frontend.about');
-}
-public function package (){
-    
-    return view('frontend.package');
-}
 
 
 public function detailpackage (){

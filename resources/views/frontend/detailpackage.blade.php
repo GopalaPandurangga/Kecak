@@ -30,17 +30,17 @@
                             <div class="swiper-wrapper">
                                 <div
                                     class="swiper-slide relative h-50   overflow-hidden rounded-lg bg-white group-hover:opacity-75 transition duration-300 ">
-                                    <img src="dist/assets/package.jpeg" alt="Gambar 1"
+                                    <img src="{{asset('storage/'.$data->photo)}}" alt="Gambar 1"
                                         class="h-full w-full object-cover object-center">
                                 </div>
                                 <div
                                     class="swiper-slide relative h-50 overflow-hidden rounded-lg bg-white group-hover:opacity-75 transition duration-300 ">
-                                    <img src="dist/assets/rahwana.jpeg" alt="Gambar 2"
+                                    <img src="{{asset('storage/'.$data->photo)}}" alt="Gambar 2"
                                         class="w-full h-auto hidden-slide">
                                 </div>
                                 <div
                                     class="swiper-slide relative h-50 overflow-hidden rounded-lg bg-white group-hover:opacity-75 transition duration-300  ">
-                                    <img src="dist/assets/hanoman.jpeg" alt="Gambar 3"
+                                    <img src="{{asset('storage/'.$data->photo)}}" alt="Gambar 3"
                                         class="w-full h-auto hidden-slide">
                                 </div>
                             </div>
@@ -48,10 +48,11 @@
                             <div class="swiper-button-prev"></div>
                         </div>
                     </div>
+
                     <div class="w-full self-center dark:text-white md:flex-1 md:mr-10 mx-20 my-20 lg:my-20 lg:w-1/2">
-                        <h1 class="text-4xl font-bold mb-4 font-pt-serif">Reguler Package</h1>
+                        <h1 class="text-4xl font-bold mb-4 font-pt-serif">{{$data->name}}</h1>
                         <div class="">
-                            <h2 class="text-2xl font-bold text-primary ">Rp 100.000</h2>
+                            <h2 class="text-2xl font-bold text-primary ">{{$data->rate}}</h2>
                         </div>
                         <div class="flex items-center mr-2 mb-8">
                             <span class="text-yellow-400">★</span>
@@ -60,12 +61,10 @@
                             <span class="text-yellow-400">★</span>
                             <span class="text-gray-400">☆</span>
                         </div>
-                        <p class="text-gray-700 mb-16">This package is the most frequently purchased package, because it
-                            is available both online and offline.
-                            This package is the standard package for the Kecak fire and trance dance performance.</p>
+                        <p class="text-gray-700 mb-16">{{$data->desc}}</p>
 
                         <div class="mt-auto mb-4">
-                            <a href="kontak2"
+                            <a href="/kontak2"
                                 class="bg-dark hover:bg-primary text-white px-4 py-2 rounded transition duration-300">Buy
                                 Now</a>
                         </div>

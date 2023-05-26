@@ -3,34 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\About;
 use App\Models\LandingPage;
-use App\Models\Berita;
-use App\Models\Paket;
 
-class LandingPageController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function about (){
+        $data = About::first();
+        $data1 = About::skip(1)->first();
+        $data2 = LandingPage::skip(1)->first();
+        return view('frontend.about', compact('data','data1','data2'));
+    }
     public function index()
     {
-        //
-        $testi = Berita::first();
-        $data1 = LandingPage::first();
-        $data2 = LandingPage::skip(1)->first();
-        $data3 = LandingPage::skip(2)->first();
-        $data = Paket::paginate(3);
-        return view('frontend.landingpage', compact('testi','data','data1','data2','data3'));
-        
-    }
-
-    public function index2()
-    {
-        $data1 = LandingPage::all();
-        return response()->json($data1);
-
+        $data = About::all();
+        return response()->json($data);
     }
 
     /**
@@ -51,12 +43,12 @@ class LandingPageController extends Controller
      */
     public function store(Request $request)
     {
-        
         $validasi=$request -> validate([
-            'landingpages_id'=>'required',
+            'about_id'=>'required',
             'title'=>'required',
             'desc'=>'required',
-            'photo'=>'required|mimes:jpg,bmp,png,webp'
+            'sub_desc'=>'required',
+            'photo'=>'required|mimes:jpg,bmp,png,webp,mp4'
         ]);
         
         try {
@@ -64,7 +56,7 @@ class LandingPageController extends Controller
              $path = $request -> file('photo')->store('covers');
              $validasi['photo']=$path;
             
-            $response = LandingPage::create($validasi);
+            $response = About::create($validasi);
             return response()->json([
                 'success'=> true,
                 'message'=>'success',
@@ -89,7 +81,6 @@ class LandingPageController extends Controller
                     'errors'=>$th->getMessage()
                 ]);
             }
-        
     }
 
     /**
@@ -100,8 +91,7 @@ class LandingPageController extends Controller
      */
     public function show($id)
     {
-        $data = LandingPage::find($id);
-        return view('frontend.landingpage', compact('data'));
+        //
     }
 
     /**

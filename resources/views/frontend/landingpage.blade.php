@@ -28,15 +28,11 @@
                 <div class=" flex flex-col-reverse lg:flex-row text-center lg:text-left">
                     <div class="w-full dark:text-white self-center md:flex-1 md:mr-10  my-20 lg:w-1/2">
                         <h1 class="font-pt-serif text-5xl font-bold mb-7">
-                            Kecak Fire <br>
-                            <span class="bg-underline1 bg-right-bottom bg-no-repeat pb-2 bg-80%">
-                                and Trance Dance
-                            </span>
+                            {{$data1->title}}
+                            
                         </h1>
                         <p class="font-pt-serif md:text-xl font-normal lg:text-left text-center mb-10">
-                            The Sanghyang is a god-inspired trance-dance the function <br>
-                            of which is to protect society against evil force and epidemics. <br>
-                            It can take several form and the version here presented is the Sanghyang Djaran.
+                            {{$data1->desc}}
                         </p>
 
                         <a href="about"
@@ -46,7 +42,7 @@
                     </div>
                     <div class=" w-full self-end px-20 lg:w-1/2 ">
                         <div class="relative mt-10 lg:left-20 ">
-                            <img src="dist/assets/kecak fix.png" alt="kecak" class="max-w-full mx-auto">
+                            <img src="{{asset('storage/'.$data1->photo)}}" alt="gambar" class="max-w-full mx-auto">
                         </div>
                     </div>
                 </div>
@@ -190,11 +186,12 @@
                     <p class="lg:w-1/2 text-center text-xl dark:text-white">Here we summarize the package options that are most often purchased by website visitors</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-20">
+                @foreach ($data as $datas)
                     <div
                         class="group relative items-center justify-center overflow-hidden cursor-pointer  hover:shadow-xl rounded-lg transition-shadow">
                         <div class="h-72 w-full relative overflow-hidden  ">
                             <img class="h-72 w-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
-                                src="dist/assets/package.jpeg" alt="">
+                                src="{{asset('storage/'.$datas->photo)}}" alt="">
 
                         </div>
                         <div
@@ -202,54 +199,14 @@
                         </div>
                         <div
                             class="absolute inset-0 flex flex-col items-start justify-start translate-y-[65%] lg:items-center lg:justify-center px-4 lg:px-9 lg:text-center lg:translate-y-[75%] lg:group-hover:translate-y-10 transition-all duration-300">
-                            <h1 class="text-base lg:text-2xl text-white font-bold">Reguler Package </h1>
-                            <p class="text-sm lg:text-lg text-gray-100 font-normal mb-2 lg:mb-4">Lorem ipsum dolor sit
-                                amet consectetur adipisicing elit. Vitae, excepturi.</p>
+                            <h1 class="text-base lg:text-2xl text-white font-bold"> {{$datas->name}} </h1>
+                            <p class="text-sm lg:text-lg text-gray-100 font-normal mb-2 lg:mb-4">{{$datas->desc}}.</p>
                             <a href="package"
                                 class="rounded-full  lg:bg-dark lg:py-2 lg:px-3.5 text-sm capitalize text-white font-bold">See
                                 More</a>
                         </div>
                     </div>
-                    <div
-                        class="group relative items-center justify-center overflow-hidden cursor-pointer  hover:shadow-xl rounded-lg transition-shadow">
-                        <div class="h-72 w-full relative overflow-hidden  ">
-                            <img class="h-72 w-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
-                                src="dist/assets/package.jpeg" alt="">
-
-                        </div>
-                        <div
-                            class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark lg:to-dark/30 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70    ">
-                        </div>
-                        <div
-                            class="absolute inset-0 flex flex-col items-start justify-start translate-y-[65%] lg:items-center lg:justify-center px-4 lg:px-9 lg:text-center lg:translate-y-[75%] lg:group-hover:translate-y-10 transition-all duration-300">
-                            <h1 class="text-base lg:text-2xl text-white font-bold">Prince Package</h1>
-                            <p class="text-sm lg:text-lg text-gray-100 font-normal mb-2 lg:mb-4">Lorem ipsum dolor sit
-                                amet consectetur adipisicing elit. Vitae, excepturi.</p>
-                            <a href="package"
-                                class="rounded-full  lg:bg-dark lg:py-2 lg:px-3.5 text-sm capitalize text-white font-bold">See
-                                More</a>
-                        </div>
-                    </div>
-                    <div
-                        class="group relative items-center justify-center overflow-hidden cursor-pointer  hover:shadow-xl rounded-lg transition-shadow">
-                        <div class="h-72 w-full relative overflow-hidden  ">
-                            <img class="h-72 w-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
-                                src="dist/assets/package.jpeg" alt="">
-
-                        </div>
-                        <div
-                            class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark lg:to-dark/30 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70    ">
-                        </div>
-                        <div
-                            class="absolute inset-0 flex flex-col items-start justify-start translate-y-[65%] lg:items-center lg:justify-center px-4 lg:px-9 lg:text-center lg:translate-y-[75%] lg:group-hover:translate-y-10 transition-all duration-300">
-                            <h1 class="text-base lg:text-2xl text-white font-bold">God Package</h1>
-                            <p class="text-sm lg:text-lg text-gray-100 font-normal mb-2 lg:mb-4">Lorem ipsum dolor sit
-                                amet consectetur adipisicing elit. Vitae, excepturi.</p>
-                            <a href="package"
-                                class="rounded-full  lg:bg-dark lg:py-2 lg:px-3.5 text-sm capitalize text-white font-bold">See
-                                More</a>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
 
@@ -269,20 +226,16 @@
                 <div class=" flex flex-wrap lg:text-left text-center ">
                     <div class=" max-w-full self-end px-20 lg:w-1/2 lg:bottom-10 ">
                         <div class="relative rounded-3xl mt-10 my-2 lg:my-10 ">
-                            <img src="dist/assets/taman kaja.png" alt="taman" class="w-max rounded-3xl mx-auto">
+                            <img src="{{asset('storage/'.$data2->photo)}}" alt="taman" class="w-max rounded-3xl mx-auto">
                         </div>
                     </div>
                     <div class="w-full self-center dark:text-white md:flex-1 md:mr-10 mx-20 my-20 lg:my-20 lg:w-1/2">
                         <h1 class="font-pt-serif   text-base lg:text-xl font-bold mb-7">
-                            Pura Dalem Desa Pakraman Taman Kaja
+                        {{$data2->title}}
 
                         </h1>
                         <p class=" lg:text-lg text-base font-normal  mb-8 lg:mb-20">
-                            Desa Pakraman Taman Kaja is a small village of
-                            about 140 families and is situated just to the
-                            north of Jalan Raya Ubud along Sriwedari and Sandat Street.
-                            In this village there is a pura dalem,
-                            where in this pura dalem the kecak fire dance and trance dance are performed.<br>
+                        {{$data2->desc}}
 
                         </p>
 
@@ -303,23 +256,17 @@
                     <div class="w-full self-center dark:text-white md:flex-1 md:mr-10 mx-10  lg:w-1/2">
                         <h1 class="font-pt-serif text-lg font-bold mb-5">
                             Visitors Testimonial <br>
-                            <div class="text-sm font-montserrat text-gray-500">Gopala Pandurangga</div>
+                            <div class="text-sm font-montserrat text-gray-500">{{$testi->title}}</div>
                         </h1>
                         <p class="md:text-xl text-black font-bold  lg:text-left text-center mb-7">
-                            The Show is just to cool, love it, <br>
-                            if some day i have time to go ubud again, <br>
-                            i want to watch this show again
+                        {{$testi->testimonial}}
                         </p>
                         <p class="md:text-xl font-normal lg:text-left text-center mb-10 lg:mb-5">
-                            Lorem ipsum dolor sit amet, consectetuer
-                            adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa. Cum sociis natoque penatibus
-                            ridiculus mus. Donec quam felis, ultricies nec,
-                            pellentesque eu, pretium quis, sem.
+                        {{$testi->messages}}
                         </p>
                         <p class="font-pt-serif text-md font-bold lg:text-left text-center ">
                             Rate 
-                            <div class="flex items-center mr-2 mb-8">
+                        <div class="flex items-center mr-2 mb-8">
                             <span class="text-yellow-400">★</span>
                             <span class="text-yellow-400">★</span>
                             <span class="text-yellow-400">★</span>
@@ -347,14 +294,11 @@
         <section id="should" class="dark:bg-dark ">
             <div class="container">
                 <div class="secondaryTitle text-center dark:text-white lg:text-5xl text-xl bg-100% font-bold">
-                    <h2 class="mb-10">You'll love and enjoy the show</h2>
-                    <p class="text-xs lg:text-xl font-normal text-center ">Lorem ipsum dolor sit amet, consectetuer
-                        adipiscing elit.
-                        Aenean commodo ligula eget dolor. <br>
-                        Aenean massa. Cum sociis natpoque penatibus et magnis dis parturient</p>
+                    <h2 class="mb-10">{{$data3->title}}</h2>
+                    <p class="text-xs lg:text-xl font-normal text-center ">{{$data3->desc}}</p>
                 </div>
                 <div class="relative ">
-                    <img src="dist/assets/maxresdefault.jpeg" alt="foto" class="w-fit shadow-2xl">
+                    <img src="{{asset('storage/'.$data3->photo)}}" alt="foto" class="w-fit shadow-2xl">
                 </div>
             </div>
 
@@ -371,9 +315,7 @@
                     <div class="secondaryTitle text-lg lg:text-3xl font-bold text-black dark:text-white text-center">
                         <h2>Write Your Opinion About The Show</h2><br>
                         <p class="text-gray-700 dark:text-gray-100 lg:text-xl text-xs font-normal text-center">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
-                            Sequi numquam beatae vel praesentium atque culpa ab earum
-
+                        We are happy to know your feedback about our appearance
                     </div>
                 </div>
                 <form action="{{(isset($berita))?route('berita.update', $berita->id) :route('berita.store')}}"
@@ -384,6 +326,15 @@
 
                     @endif
                     <div class="w-full lg:w-2/3 lg:mx-auto">
+                    <div class="w-full px-4 mb-4">
+                            <label for="name"
+                                class="text-base font-bolf text-black dark:text-white dark:hover:text-primary hover:text-primary">Your
+                                Id
+                            </label>
+                            <input type="text" name="title" class="w-full bg-gray-100 text-black
+                                p-3 rounded-md focus:outline-none focus:ring-3 focus:border-primary"
+                                placeholder="">
+                        </div>
 
                         <div class="w-full px-4 mb-4">
                             <label for="name"

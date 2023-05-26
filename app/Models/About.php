@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LandingPage extends Model
+class About extends Model
 {
     use HasFactory;
-    public $primaryKey="landingpages_id";
-    protected $table="landing_pages";
+    public $primaryKey="about_id";
+    protected $table="abouts";
     public $timestamps = false;
     protected $fillable =[
-        'landingpages_id','title','desc','photo'
+        'about_id','title','desc','sub_desc','photo'
     ];
-    
 }

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Package;
-use App\Models\comunity;
+use App\Models\Paket;
+// use App\Models\comunity;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,12 +18,23 @@ class PackageController extends Controller
      */
     public function index()
     {
-        $package = Package::all();
+        $package = Paket::all();
         $title = "Package List";
-        
         return view('backpage.daftarpackage', compact('title', 'package'));
        
     }
+
+    public function index2()
+    {
+        $package = Paket::all();
+        return response()->json($package);
+    }
+
+    public function package (){
+        $data = Paket::all();
+        return view('frontend.package', compact('data'));
+    }
+
     
 
     /**
@@ -33,9 +44,9 @@ class PackageController extends Controller
      */
     public function create()
     {
-        $title = "Add Some Package";
-        $comunities = comunity::all();
-        return view('backpage.inputpackage', compact('title', 'comunities'));
+        // $title = "Add Some Package";
+        // $comunities = comunity::all();
+        // return view('backpage.inputpackage', compact('title', 'comunities'));
     }
 
     /**
@@ -47,26 +58,45 @@ class PackageController extends Controller
     public function store(Request $request)
     {
 
-        $message=[
-            'required'=> 'attribute must complete',
-            'date'=> 'attribute must date',
-            'numeric'=> 'attribute must number',
-        ];
         $validasi=$request -> validate([
-            // 'package_id'=>'required',
-            'package_code'=>'required|numeric',
-            'package_name'=>'required',
-            'package_desc'=>'required',
-            // 'location_id'=>'required',
-            'community_id'=>'required',
-            'feature_image'=>'required|mimes:jpg,bmp,png|max:1024'
-        ],$message);
-        //$fileName = time().$request->file('cover')->getClientOriginalName();
-         $path = $request -> file('feature_image')->storeAs('photo',$fileName);
-         $validasi['package_id']=Auth::id();
-        $validasi['feature_image']=$path;
-        Package::create($validasi);
-        return redirect('daftarpackage')->with('success','Data Successfully save');
+            'packages_id'=>'required',
+            'name'=>'required',
+            'rate'=>'required',
+            'desc'=>'required',
+            'location'=>'required',
+            'photo'=>'required|mimes:jpg,bmp,png,webp'
+        ]);
+        
+        try {
+            //  $fileName = time().$request->file('cover')->getClientOriginalName();
+             $path = $request -> file('photo')->store('covers');
+             $validasi['photo']=$path;
+            
+            $response = Paket::create($validasi);
+            return response()->json([
+                'success'=> true,
+                'message'=>'success',
+                'body'=>$response
+            ]);
+            // if ($response!=null){
+            //     return response()->json([
+            //         'success'=> true,
+            //         'message'=>'success'
+            //     ]);
+            // }else{
+            //     return response()->json([
+            //         'success'=> false,
+            //         'message'=>'tidak tersimpan'
+            //     ]);
+            // }
+    
+            } catch (\Throwable $th) {
+                return response()->json([
+                    'success'=> false,
+                    'message'=>'error',
+                    'errors'=>$th->getMessage()
+                ]);
+            }
         
     }
 
@@ -76,9 +106,10 @@ class PackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($package_id)
     {
-        //
+        $data = Paket::findOrFail($package_id);
+        return view ('frontend.detailpackage', compact('data'));
     }
 
     /**
@@ -105,32 +136,47 @@ class PackageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $message=[
-            'required'=> 'attribute must complete',
-            'date'=> 'attribute must date',
-            'numeric'=> 'attribute must number',
-        ];
         $validasi=$request -> validate([
-            // 'package_id'=>'required',
-            'package_code'=>'required',
-            'package_name'=>'required',
-            'package_desc'=>'required',
-            // 'location_id'=>'required',
-            'community_id'=>'required',
-            
-        ],$message);
+            'packages_id'=>'required',
+            'name'=>'required',
+            'rate'=>'required',
+            'desc'=>'required',
+            'location'=>'required',
+            'photo'=>''
+        ]);
         
-        if($request->hasFile('feature_img')){
-            $fileName=time().$request->file('feature_image')->getClientOriginalName();
-            $path = $request -> file('feature_image')->storeAs('photo', $fileName);
-            $validasi['feature_image']=$path;
-            $package=Package::find($id);
-            Storage::delete($package->feature_image);
-        }
-        
-        $validasi['package_id']=Auth::id();
-        Package::where('id', $id)->update($validasi);
-        return redirect('daftarpackage')->with('success','Data Successfully Update');
+        try {
+            //  $fileName = time().$request->file('cover')->getClientOriginalName();
+            if($request->file('photo')){
+                $path = $request -> file('photo')->store('covers');
+                $validasi['photo']=$path;
+            }
+            $response = Paket::find($id);
+            $response -> update($validasi);
+            return response()->json([
+                'success'=> true,
+                'message'=>'success',
+                'body'=>$response
+            ]);
+            // if ($response!=null){
+            //     return response()->json([
+            //         'success'=> true,
+            //         'message'=>'success'
+            //     ]);
+            // }else{
+            //     return response()->json([
+            //         'success'=> false,
+            //         'message'=>'tidak tersimpan'
+            //     ]);
+            // }
+    
+            } catch (\Throwable $th) {
+                return response()->json([
+                    'success'=> false,
+                    'message'=>'error',
+                    'errors'=>$th->getMessage()
+                ]);
+            }
     }
 
     /**
@@ -141,13 +187,26 @@ class PackageController extends Controller
      */
     public function destroy($id)
     {
-        $package=Package::find($id);
-        if($package != null){
-            // Storage::delete($berita->cover);
-            $package=Package::find($package->package_id);
-            Package::where('package_id', $id)->delete();
+        try{
+        $package=Paket::find($id);
+        $package->delete();
+        return response()->json([
+            'success'=> true,
+            'message'=>'success',
+        ]); }
+        catch (\Throwable $th) {
+            return response()->json([
+                'success'=> false,
+                'message'=>'error',
+                'errors'=>$th->getMessage()
+            ]);
         }
+        // if($package != null){
+        //     // Storage::delete($berita->cover);
+        //     $package=Package::find($package->package_id);
+        //     Package::where('package_id', $id)->delete();
+        // }
         
-        return redirect('daftarpackage')->with('success','Data Successfully Deleted');
+        // return redirect('daftarpackage')->with('success','Data Successfully Deleted');
     }
 }

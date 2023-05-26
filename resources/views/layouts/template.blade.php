@@ -77,11 +77,11 @@
                                 </x-dropdown>
                             </li>
                             <li class="group">
-                                <a href="package"
+                                <a href="/package"
                                     class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex ">Package</a>
                             </li>
                             <li class="group">
-                                <a href="kontak2"
+                                <a href="/kontak2"
                                     class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex ">Contact</a>
                             </li>
                             <li class="flex items-center">

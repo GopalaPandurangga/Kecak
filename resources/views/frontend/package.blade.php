@@ -24,115 +24,31 @@
             <div class="container ">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] pt-20 ">
-
+                    @foreach ($data as $datas)
                     <div class="relative overflow-hidden bg-white rounded-xl group mr-[30px] ">
                         <div
                             class="relative h-80 w-full overflow-hidden  bg-white  group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                            <img src='dist/assets/rama.jpeg' alt="rama sinta"
+                            <img src="{{asset('storage/'.$datas->photo)}}" alt="paket"
                                 class="h-full w-full object-cover object-center">
                         </div>
                         <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
-                            <a href="detailpackage">
+                            <a href="/detailpackage/{{ $datas->package_id}}">
                                 <span class="absolute inset-0"></span>
-                                Child
+                                {{$datas->name}}
                             </a>
                         </h3>
                         <p class ="text-primary pl-4 font-bold mb-4 ">
-                            Rp 100.000
+                        {{$datas->rate}}
                         </p>
                         <p class="text-base pl-4   pr-4 font-semibold text-gray-900">
-                            regular package from kecak fire and trance dance permomance include .....
+                        {{$datas->desc}}
                         </p>
-                        <p class="text-sm pl-4 mb-8 mt-4  pr-4 font-reguler text-gray-900"> Bali-Taman Kaja Ubud</p>
+                        <p class="text-sm pl-4 mb-8 mt-4  pr-4 font-reguler text-gray-900"> {{$datas->location}}</p>
                         
                     </div>
 
-                   <div class="relative overflow-hidden bg-white rounded-xl group mr-[30px] ">
-                        <div
-                            class="relative h-80 w-full overflow-hidden  bg-white  group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                            <img src='dist/assets/rama.jpeg' alt="rama sinta"
-                                class="h-full w-full object-cover object-center">
-                        </div>
-                        <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
-                            <a href="detailpackage">
-                                <span class="absolute inset-0"></span>
-                                Regular Package
-                            </a>
-                        </h3>
-                        <p class ="text-primary pl-4 font-bold mb-4 ">
-                            Rp 100.000
-                        </p>
-                        <p class="text-base pl-4   pr-4 font-semibold text-gray-900">
-                            regular package from kecak fire and trance dance permomance include .....
-                        </p>
-                        <p class="text-sm pl-4 mb-8 mt-4  pr-4 font-reguler text-gray-900"> Bali-Taman Kaja Ubud</p>
-                        
-                    </div>
-
-                    <div class="relative overflow-hidden bg-white rounded-xl group mr-[30px] ">
-                        <div
-                            class="relative h-80 w-full overflow-hidden  bg-white  group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                            <img src='dist/assets/rama.jpeg' alt="rama sinta"
-                                class="h-full w-full object-cover object-center">
-                        </div>
-                        <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
-                            <a href="detailpackage">
-                                <span class="absolute inset-0"></span>
-                                Prince Package
-                            </a>
-                        </h3>
-                        <p class ="text-primary pl-4 font-bold mb-4 ">
-                            Rp 100.000
-                        </p>
-                        <p class="text-base pl-4   pr-4 font-semibold text-gray-900">
-                            regular package from kecak fire and trance dance permomance include .....
-                        </p>
-                        <p class="text-sm pl-4 mb-8 mt-4  pr-4 font-reguler text-gray-900"> Bali-Taman Kaja Ubud</p>
-                        
-                    </div>
-                    <div class="relative overflow-hidden bg-white rounded-xl group mr-[30px] ">
-                        <div
-                            class="relative h-80 w-full overflow-hidden  bg-white  group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                            <img src='dist/assets/rama.jpeg' alt="rama sinta"
-                                class="h-full w-full object-cover object-center">
-                        </div>
-                        <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
-                            <a href="detailpackage">
-                                <span class="absolute inset-0"></span>
-                                King Package
-                            </a>
-                        </h3>
-                        <p class ="text-primary pl-4 font-bold mb-4 ">
-                            Rp 100.000
-                        </p>
-                        <p class="text-base pl-4   pr-4 font-semibold text-gray-900">
-                            regular package from kecak fire and trance dance permomance include .....
-                        </p>
-                        <p class="text-sm pl-4 mb-8 mt-4  pr-4 font-reguler text-gray-900"> Bali-Taman Kaja Ubud</p>
-                        
-                    </div>
-                    <div class="relative overflow-hidden bg-white rounded-xl group mr-[30px] ">
-                        <div
-                            class="relative h-80 w-full overflow-hidden  bg-white  group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                            <img src='dist/assets/rama.jpeg' alt="rama sinta"
-                                class="h-full w-full object-cover object-center">
-                        </div>
-                        <h3 class="mt-4  text-md pl-4 font-bold text-black dark:text-white">
-                            <a href="detailpackage">
-                                <span class="absolute inset-0"></span>
-                                God Package
-                            </a>
-                        </h3>
-                        <p class ="text-primary pl-4 font-bold mb-4 ">
-                            Rp 100.000
-                        </p>
-                        <p class="text-base pl-4   pr-4 font-semibold text-gray-900">
-                            regular package from kecak fire and trance dance permomance include .....
-                        </p>
-                        <p class="text-sm pl-4 mb-8 mt-4  pr-4 font-reguler text-gray-900"> Bali-Taman Kaja Ubud</p>
-                        
-                    </div>
-
+                  
+                    @endforeach
 
                 </div>
             </div>

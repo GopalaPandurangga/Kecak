@@ -7,6 +7,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,13 @@ use App\Http\Controllers\LandingPageController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', [LandingPageController::class, 'index'])->name('home');
+Route::get('/data/{id}', [LandingPageController::class, 'show']  );
+Route::get('/', [LandingPageController::class, 'index'] );
+
+Route::get('/package', [PackageController::class, 'package'])->name('package');
+Route::get('/detailpackage/{package_id}', [PackageController::class, 'show'])->name('detailpackage');
+
+Route::get('/about', [AboutController::class, 'about'])->name('about');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -38,17 +45,15 @@ Route::middleware('auth')->group(function () {
 
 // home controller
 
-
-Route::get('/about', [HomeController::class, 'about'])->name('about');
-Route::get('/package', [HomeController::class, 'package'])->name('package');
 Route::get('/kontakkk', [HomeController::class, 'kontakkk'])->name('kontakkk');
-Route::get('/detailpackage', [HomeController::class, 'detailpackage'])->name('detailpackage');
+
 Route::get('/galery', [HomeController::class, 'galery'])->name('galery');
 
 
 // berita controller
-Route::get('/testi', [BeritaController::class, 'testi'])->middleware('auth:sanctum', 'verified')->name('testi');
+Route::get('/testi', [BeritaController::class, 'testi'])->name('testi');
 Route::resource('berita', BeritaController::class);
+
 // package controller
 Route::get('/pkgg', [PackageController::class, 'index'])->middleware('auth:sanctum', 'verified')->name('pkgg');
 Route::get('/kontak2', [PackageController::class, 'kontak2'])->name('kontak2');

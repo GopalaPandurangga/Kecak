@@ -31,12 +31,11 @@
                         <tr class="text-lg text-left">
                             <th class="w-1 px-2"> Checklist </th>
                             <th> Package id </th>
-                            <th> Package Code</th>
                             <th> Package Name</th>
+                            <th> Package Rate</th>
                             <th> Package Desc</th>
-                            <th> Feature Image</th>
-                            <th> Location id</th>
-                            <th> Community id</th>
+                            <th> Package Location</th>
+                            <th> Photo</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
@@ -46,14 +45,14 @@
                         <tr>
                             <td><input type="checkbox" name="" id=""></td>
                             <td> {{$pkg -> package_id}}</td>
-                            <td> {{$pkg -> package_code}}</td>
-                            <td> {{$pkg -> package_name}}</td>
-                            <td>{{$pkg -> package_desc}}</td>
+                            <td> {{$pkg -> name}}</td>
+                            <td> {{$pkg -> rate}}</td>
+                            <td>{{$pkg -> desc}}</td>
+                            <td>{{$pkg -> location}}</td>
                             <td>
-                                <img src="{{asset('storage/'.$pkg->feature_img)}}" class="w-16" alt="">
+                                <img src="{{asset('storage/'.$pkg->photo)}}" class="w-16" alt="">
                             </td>
-                            <td>{{$pkg -> location_id}}</td>
-                            <td>{{$pkg -> community_id}}</td>
+                            
                             <td>
 
                                 <form action="{{route('paket.destroy', $pkg->package_id)}}" method="POST">

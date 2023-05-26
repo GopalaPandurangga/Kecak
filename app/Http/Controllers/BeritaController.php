@@ -64,7 +64,7 @@ class BeritaController extends Controller
          $validasi['user_id']=Auth::id();
         // $validasi['cover']=$path;
         Berita::create($validasi);
-        return redirect('home')->with('success','Data Successfully save');
+        return redirect('/')->with('success','Data Successfully save');
         
     }
 
