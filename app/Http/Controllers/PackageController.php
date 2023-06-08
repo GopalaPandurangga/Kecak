@@ -44,9 +44,9 @@ class PackageController extends Controller
      */
     public function create()
     {
-        // $title = "Add Some Package";
+        $title = "Add Some Package";
         // $comunities = comunity::all();
-        // return view('backpage.inputpackage', compact('title', 'comunities'));
+        return view('backpage.inputpackage', compact('title'));
     }
 
     /**

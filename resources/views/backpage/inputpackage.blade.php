@@ -108,20 +108,16 @@
                             </div>
                             <div class="text-xs text-red-600">@error('location_id'){{$message}} @enderror </div>
                         </div> -->
-                        <div class="col-span-3 sm:col-span-2">
+                        <!-- <div class="col-span-3 sm:col-span-2">
                                 <label for="comunities" class="block text-sm font-medium text-gray-700">
                                    Comunity</label>
                                    <select name="comunity_id" id="comunity_id" class="mt-1 block
                                    w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                    <option value="">Select Comunities</option>
-                                @foreach ($comunities as $item)
-                                <option value="{{$item->comunity_id}}">{{$item->comunity_name}}</option>
-                                @endforeach
-                                </select>
-                                
+                               
                                 <div class="text-xs text-red-600">@error('comunity_id'){{$message}} @enderror </div>
                             </div>
-                        <div>
+                        <div> -->
                        
                     </div>
                     <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">

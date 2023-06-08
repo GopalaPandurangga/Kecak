@@ -86,7 +86,7 @@ class ContactController extends Controller
         $contact=Contact::find($id);
         $title = "Edit Data";
         
-        return view('backpage.inputpackage', compact('title', 'contact'));
+        return view('backpage.inputcontact', compact('title', 'contact'));
     }
 
     /**
@@ -114,7 +114,7 @@ class ContactController extends Controller
             $path = $request -> file('cover')->storeAs('covers', $fileName);
             $validasi['cover']=$path;
             $contact=Contact::find($id);
-            Storage::delete($contact->cover);
+            // Storage::delete($contact->cover);
         }
         
         $validasi['user_id']=Auth::id();

@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\LandingPage;
-use App\Models\Berita;
-use App\Models\MainCast;
-use App\Models\Paket;
+use App\Models\News;
 
-class LandingPageController extends Controller
+class NewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,28 +14,14 @@ class LandingPageController extends Controller
      */
     public function index()
     {
-        $title = "Daftar Content";
-        $content = LandingPage::all();
-        return view ('backpage.daftarcontent', compact('title','content'));
+        $title = "Daftar News";
+        $news = News::all();
+        return view ('backpage.daftarnews', compact('title','news'));
     }
-
-    public function content()
-    {
-        //
-        $testi = Berita::first();
-        $data1 = LandingPage::first();
-        $data2 = LandingPage::skip(1)->first();
-        $data3 = LandingPage::skip(2)->first();
-        $data = Paket::paginate(3);
-        $cast = MainCast::paginate(3);
-        return view('frontend.landingpage', compact('testi','data','data1','data2','data3','cast'));
-        
-    }
-
     public function index2()
     {
-        $data1 = LandingPage::all();
-        return response()->json($data1);
+        $cast = News::all();
+        return response()->json($cast);
 
     }
 
@@ -49,8 +32,7 @@ class LandingPageController extends Controller
      */
     public function create()
     {
-        $title = "Input Data";
-        return view('backpage.inputcontent', compact('title'));
+        //
     }
 
     /**
@@ -61,9 +43,8 @@ class LandingPageController extends Controller
      */
     public function store(Request $request)
     {
-        
         $validasi=$request -> validate([
-            'landingpages_id'=>'required',
+            
             'title'=>'required',
             'desc'=>'required',
             'photo'=>'required|mimes:jpg,bmp,png,webp'
@@ -74,7 +55,7 @@ class LandingPageController extends Controller
              $path = $request -> file('photo')->store('covers');
              $validasi['photo']=$path;
             
-            $response = LandingPage::create($validasi);
+            $response = News::create($validasi);
             return response()->json([
                 'success'=> true,
                 'message'=>'success',
@@ -99,7 +80,6 @@ class LandingPageController extends Controller
                     'errors'=>$th->getMessage()
                 ]);
             }
-        
     }
 
     /**
@@ -110,7 +90,7 @@ class LandingPageController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
@@ -144,13 +124,6 @@ class LandingPageController extends Controller
      */
     public function destroy($id)
     {
-        $content=LandingPage::find($id);
-        if($content != null){
-            Storage::delete($content->photo);
-            $content=LandingPage::find($content->id);
-            LandingPage::where('id', $id)->delete();
-        }
-        
-        return redirect('content')->with('success','Data Successfully Deleted');
+        //
     }
 }

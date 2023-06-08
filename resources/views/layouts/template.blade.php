@@ -81,9 +81,15 @@
                                     class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex ">Package</a>
                             </li>
                             <li class="group">
+                                <a href="/package"
+                                    class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex ">Latest News</a>
+                            </li>
+                            
+                            <!-- <li class="group">
                                 <a href="/kontak2"
                                     class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex ">Contact</a>
-                            </li>
+                            </li> -->
+                            
                             <li class="flex items-center">
                                 <div class="flex mx-4 py-2">
                                     <span class="mr-2 text-sm text-black dark:text-white">Light</span>
@@ -97,6 +103,7 @@
                                     <span class="ml-2 text-sm text-black dark:text-white dark ">Dark</span>
                                 </div>
                             </li>
+                            
 
                           
                             

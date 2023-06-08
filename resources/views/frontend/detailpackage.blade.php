@@ -64,7 +64,7 @@
                         <p class="text-gray-700 mb-16">{{$data->desc}}</p>
 
                         <div class="mt-auto mb-4">
-                            <a href="/kontak2"
+                            <a href="/order"
                                 class="bg-dark hover:bg-primary text-white px-4 py-2 rounded transition duration-300">Buy
                                 Now</a>
                         </div>

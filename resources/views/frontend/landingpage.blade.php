@@ -9,7 +9,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="build/assets/app.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-        <script src="build/assets/script.js"></script>
+        
         <title>Kecak Fire and Trance Dance</title>
 
         <!-- Fonts -->
@@ -29,7 +29,7 @@
                     <div class="w-full dark:text-white self-center md:flex-1 md:mr-10  my-20 lg:w-1/2">
                         <h1 class="font-pt-serif text-5xl font-bold mb-7">
                             {{$data1->title}}
-                            
+
                         </h1>
                         <p class="font-pt-serif md:text-xl font-normal lg:text-left text-center mb-10">
                             {{$data1->desc}}
@@ -114,62 +114,25 @@
                     <h2>Main Cast in the Kecak Show</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-20 ">
-
+                @foreach ($cast as $datas)
                     <div class="relative overflow-hidden group mr-[30px] ">
                         <div
                             class="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-2xl group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                            <img src='dist/assets/rama.jpeg' alt="rama sinta"
+                            <img src="{{asset('storage/'.$datas->photo)}}" alt="rama sinta"
                                 class="h-full w-full object-cover object-center">
                         </div>
                         <h3 class="mt-6 text-md font-bold text-black dark:text-white">
                             <a href="#">
                                 <span class="absolute inset-0"></span>
-                                Rama Shinta
+                                {{$datas->title}}
                             </a>
                         </h3><br>
                         <p class="text-base font-semibold text-gray-900">
-                            Prince Rama, heir to the throne of the kingdom of Ayodya,
-                            and his Wife Sita have been banished from the Kingdom by
-                            King Dasarata as a result of trickery by Rama’s stepmom</p>
+                            {{$datas->desc}}</p>
                     </div>
 
-                    <div class="relative overflow-hidden group mr-[30px]">
-                        <div
-                            class="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-2xl group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                            <img src='dist/assets/hanoman.jpeg' alt="hanoman"
-                                class="h-full w-full object-cover object-center">
-                        </div>
-                        <h3 class="mt-6 text-md font-bold text-black dark:text-white">
-                            <a href="#">
-                                <span class="absolute inset-0"></span>
-                                Hanooman
-                            </a>
-                        </h3><br>
-                        <p class="text-base font-semibold text-gray-900">
-                            Hanuman (/ˈhʌnʊˌmɑːn/; Sanskrit:, IAST: Hanumān)[8], also called Anjaneya
-                            (Sanskrit:)[9], is a Hindu god and a divine vanara companion of the god Rama.</p>
-                    </div>
-
-                    <div class="relative overflow-hidden group mr-[30px]">
-                        <div
-                            class="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-2xl group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                            <img src='dist/assets/rahwana.jpeg' alt="rahwana"
-                                class="h-full w-full object-cover object-center">
-                        </div>
-                        <h3 class="mt-6 text-md font-bold dark:text-white">
-                            <a href="#">
-                                <span class="absolute inset-0  "></span>
-                                Rahwana
-                            </a>
-                        </h3>
-                        <br>
-                        <p class="text-base font-semibold text-gray-900">
-                            Ravana is described to be the eldest son of sage Vishrava and rakshasi Kaikesi.
-                            He abducted Prince Rama's wife Sita and took her to his kingdom of Lanka,
-                            he held her in the Ashok Vatika.
-                        </p>
-                    </div>
-
+                    
+                    @endforeach
 
                 </div>
             </div>
@@ -181,12 +144,14 @@
             <div class="container items-center justify-center mx-auto py-36">
                 <div class="flex flex-col items-center gap-3">
                     <h1 class="text-black dark:text-white font-pt-serif font-bold text-3xl mb-2">Package</h1>
-                    <h1 class=" font-sans font-semibold text-3xl text-center text-gray-500 dark:text-white mb-4 ">Several Package Option
+                    <h1 class=" font-sans font-semibold text-3xl text-center text-gray-500 dark:text-white mb-4 ">
+                        Several Package Option
                     </h1>
-                    <p class="lg:w-1/2 text-center text-xl dark:text-white">Here we summarize the package options that are most often purchased by website visitors</p>
+                    <p class="lg:w-1/2 text-center text-xl dark:text-white">Here we summarize the package options that
+                        are most often purchased by website visitors</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-20">
-                @foreach ($data as $datas)
+                    @foreach ($data as $datas)
                     <div
                         class="group relative items-center justify-center overflow-hidden cursor-pointer  hover:shadow-xl rounded-lg transition-shadow">
                         <div class="h-72 w-full relative overflow-hidden  ">
@@ -226,16 +191,17 @@
                 <div class=" flex flex-wrap lg:text-left text-center ">
                     <div class=" max-w-full self-end px-20 lg:w-1/2 lg:bottom-10 ">
                         <div class="relative rounded-3xl mt-10 my-2 lg:my-10 ">
-                            <img src="{{asset('storage/'.$data2->photo)}}" alt="taman" class="w-max rounded-3xl mx-auto">
+                            <img src="{{asset('storage/'.$data2->photo)}}" alt="taman"
+                                class="w-max rounded-3xl mx-auto">
                         </div>
                     </div>
                     <div class="w-full self-center dark:text-white md:flex-1 md:mr-10 mx-20 my-20 lg:my-20 lg:w-1/2">
                         <h1 class="font-pt-serif   text-base lg:text-xl font-bold mb-7">
-                        {{$data2->title}}
+                            {{$data2->title}}
 
                         </h1>
                         <p class=" lg:text-lg text-base font-normal  mb-8 lg:mb-20">
-                        {{$data2->desc}}
+                            {{$data2->desc}}
 
                         </p>
 
@@ -259,24 +225,24 @@
                             <div class="text-sm font-montserrat text-gray-500">{{$testi->title}}</div>
                         </h1>
                         <p class="md:text-xl text-black font-bold  lg:text-left text-center mb-7">
-                        {{$testi->testimonial}}
+                            {{$testi->testimonial}}
                         </p>
                         <p class="md:text-xl font-normal lg:text-left text-center mb-10 lg:mb-5">
-                        {{$testi->messages}}
+                            {{$testi->messages}}
                         </p>
                         <p class="font-pt-serif text-md font-bold lg:text-left text-center ">
-                            Rate 
-                        <div class="flex items-center mr-2 mb-8">
-                            <span class="text-yellow-400">★</span>
-                            <span class="text-yellow-400">★</span>
-                            <span class="text-yellow-400">★</span>
-                            <span class="text-yellow-400">★</span>
-                            <span class="text-gray-400">☆</span>
-                        </div>
+                            Rate
+                            <div class="flex items-center mr-2 mb-8">
+                                <span class="text-yellow-400">★</span>
+                                <span class="text-yellow-400">★</span>
+                                <span class="text-yellow-400">★</span>
+                                <span class="text-yellow-400">★</span>
+                                <span class="text-gray-400">☆</span>
+                            </div>
 
-                        <a href="testi" class="text-base font-semibold text-white bg-black
+                            <a href="testi" class="text-base font-semibold text-white bg-black
                         py-3 px-8 rounded-md hover:shadow-lg hover:bg-opacity-80 transition duration-300 ease-in-out">
-                            Show More</a>
+                                Show More</a>
                     </div>
                     <div class=" w-0 lg:max-w-full self-end  lg:w-1/2 lg:bottom-10 mb-20">
                         <div class="relative rounded-3xl lg:my-10 ">
@@ -315,7 +281,7 @@
                     <div class="secondaryTitle text-lg lg:text-3xl font-bold text-black dark:text-white text-center">
                         <h2>Write Your Opinion About The Show</h2><br>
                         <p class="text-gray-700 dark:text-gray-100 lg:text-xl text-xs font-normal text-center">
-                        We are happy to know your feedback about our appearance
+                            We are happy to know your feedback about our appearance
                     </div>
                 </div>
                 <form action="{{(isset($berita))?route('berita.update', $berita->id) :route('berita.store')}}"
@@ -326,14 +292,13 @@
 
                     @endif
                     <div class="w-full lg:w-2/3 lg:mx-auto">
-                    <div class="w-full px-4 mb-4">
+                        <div class="w-full px-4 mb-4">
                             <label for="name"
                                 class="text-base font-bolf text-black dark:text-white dark:hover:text-primary hover:text-primary">Your
                                 Id
                             </label>
                             <input type="text" name="title" class="w-full bg-gray-100 text-black
-                                p-3 rounded-md focus:outline-none focus:ring-3 focus:border-primary"
-                                placeholder="">
+                                p-3 rounded-md focus:outline-none focus:ring-3 focus:border-primary" placeholder="">
                         </div>
 
                         <div class="w-full px-4 mb-4">
@@ -387,6 +352,72 @@
             </div>
         </section>
         <!-- Comment Session End -->
+        <!-- calender -->
+        <section class ="py-20">
+        <div class="container mx-auto mt-8">
+    <h1 class="text-4xl text-center font-bold mb-8 font-montserrat">Kalender</h1>
+
+    <div class="flex justify-center mb-4">
+      <div class="w-64">
+        <div class="flex items-center justify-between mb-2">
+          <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-1 px-2 rounded-full">&lt;</button>
+          <h2 class="text-xl font-bold">June 2023</h2>
+          <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-1 px-2 rounded-full">&gt;</button>
+        </div>
+        <div class="flex flex-wrap" id="calendar"></div>
+      </div>
+    </div>
+
+    <p class="text-center" id="currentDate"></p>
+
+    <script>
+        // kalender
+// Membuat objek Date baru
+var currentDate = new Date();
+
+// Mendapatkan tanggal saat ini
+var date = currentDate.getDate();
+
+// Mendapatkan hari saat ini (dalam angka, dimulai dari 0 untuk Minggu)
+var day = currentDate.getDay();
+
+// Daftar nama hari
+var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+// Mendapatkan nama hari berdasarkan angka hari
+var dayName = daysOfWeek[day];
+
+// Menampilkan tanggal dan hari saat ini
+document.getElementById('currentDate').textContent = 'Today is ' + dayName + ', ' + currentDate.toLocaleString('default', { month: 'long' }) + ' ' + date + ', ' + currentDate.getFullYear();
+
+// Mengisi kalender dengan tanggal
+var calendar = document.getElementById('calendar');
+
+// Mendapatkan jumlah hari dalam bulan ini
+var totalDays = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+// Menambahkan elemen untuk setiap tanggal
+for (var i = 1; i <= totalDays; i++) {
+  var dayElement = document.createElement('div');
+  dayElement.className = 'w-1/7 p-1';
+
+  var dateElement = document.createElement('div');
+  dateElement.className = 'bg-white rounded-lg p-2';
+  dateElement.textContent = i;
+
+  if (i === date) {
+    dateElement.classList.add('today');
+  }
+
+  dayElement.appendChild(dateElement);
+  calendar.appendChild(dayElement);
+}
+    </script>
+  </div>
+
+
+
+        </section>
 
         <!-- Back To Start -->
         <a href="#home"
@@ -397,7 +428,7 @@
 
         <!-- Back To Start end -->
 
-
+        <script src="resources/js/app.js"></script>
 
     </body>
 </x-template-layout>

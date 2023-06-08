@@ -24,8 +24,8 @@
         <!--about-->
         <section id="About" class=" bg-black mt-10">
             
-            <div class="relative">
-                <video autoplay loop muted plays-inline class="hover:opacity-50 transition duration-300 w-screen">
+            <div class="bg-black">
+                <video autoplay loop muted plays-inline id="background-video" class="hover:opacity-50 transition duration-300 w-screen">
                     <source src="dist/assets/trance.mp4" type="video/mp4">
                 </video>
             </div>
@@ -49,7 +49,7 @@
                 </div>
                 
 
-                </div>
+                
 
 
             </div>
@@ -105,7 +105,7 @@
 
                         </p>
 
-                        <a href="about" class="text-base  font-semibold text-white bg-black 
+                        <a href="https://www.google.com/maps/place/Pura+Dalem+Taman+Kaja/@-8.5046685,115.2647993,18z/data=!4m10!1m2!2m1!1spura+dalem+desa+taman+kaja+ubud!3m6!1s0x2dd23d6a228903e1:0x23bb5fd1a7e95eac!8m2!3d-8.5063414!4d115.2656624!15sCh9wdXJhIGRhbGVtIGRlc2EgdGFtYW4ga2FqYSB1YnVkWiEiH3B1cmEgZGFsZW0gZGVzYSB0YW1hbiBrYWphIHVidWSSAQxoaW5kdV90ZW1wbGXgAQA!16s%2Fg%2F11bx5q1sxy?entry=ttu" class="text-base  font-semibold text-white bg-black 
                         py-3 px-8 rounded-md hover:shadow-lg hover:bg-opacity-80 transition duration-300 ease-in-out">
                             View Via Google Maps </a>
                     </div>

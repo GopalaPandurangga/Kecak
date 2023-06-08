@@ -7,6 +7,8 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\MainCastController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AboutController;
 
 /*
@@ -23,8 +25,13 @@ use App\Http\Controllers\AboutController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/data/{id}', [LandingPageController::class, 'show']  );
-Route::get('/', [LandingPageController::class, 'index'] );
+
+Route::get('/', [LandingPageController::class, 'content'] );
+Route::resource('content', LandingPageController::class);
+
+Route::resource('cast', MainCastController::class);
+
+Route::resource('news', NewsController::class);
 
 Route::get('/package', [PackageController::class, 'package'])->name('package');
 Route::get('/detailpackage/{package_id}', [PackageController::class, 'show'])->name('detailpackage');
@@ -56,11 +63,11 @@ Route::resource('berita', BeritaController::class);
 
 // package controller
 Route::get('/pkgg', [PackageController::class, 'index'])->middleware('auth:sanctum', 'verified')->name('pkgg');
-Route::get('/kontak2', [PackageController::class, 'kontak2'])->name('kontak2');
+
 Route::resource('paket', PackageController::class);
 // contact
 Route::get('/kontak', [ContactController::class, 'index'])->middleware('auth:sanctum', 'verified')->name('kontak');
-Route::get('/kontak2', [ContactController::class, 'kontak2'])->name('kontak2');
+Route::get('/order', [ContactController::class, 'kontak2'])->middleware('auth:sanctum', 'verified')->name('kontak2');
 Route::resource('contact', ContactController::class);
 
 Route::get('/livewire',function(){
