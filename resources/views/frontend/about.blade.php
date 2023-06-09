@@ -105,7 +105,7 @@
 
                         </p>
 
-                        <a href="https://www.google.com/maps/place/Pura+Dalem+Taman+Kaja/@-8.5046685,115.2647993,18z/data=!4m10!1m2!2m1!1spura+dalem+desa+taman+kaja+ubud!3m6!1s0x2dd23d6a228903e1:0x23bb5fd1a7e95eac!8m2!3d-8.5063414!4d115.2656624!15sCh9wdXJhIGRhbGVtIGRlc2EgdGFtYW4ga2FqYSB1YnVkWiEiH3B1cmEgZGFsZW0gZGVzYSB0YW1hbiBrYWphIHVidWSSAQxoaW5kdV90ZW1wbGXgAQA!16s%2Fg%2F11bx5q1sxy?entry=ttu" class="text-base  font-semibold text-white bg-black 
+                        <a href="https://www.google.com/maps/dir//Pura+Dalem+Taman+Kaja,+Jl.+Sri+Wedari+No.12,+Ubud,+Kecamatan+Ubud,+Kabupaten+Gianyar,+Bali+80571/@-8.5046685,115.2647993,18z/data=!4m8!4m7!1m0!1m5!1m1!1s0x2dd23d6a228903e1:0x23bb5fd1a7e95eac!2m2!1d115.265628!2d-8.506332?entry=ttu" class="text-base  font-semibold text-white bg-black 
                         py-3 px-8 rounded-md hover:shadow-lg hover:bg-opacity-80 transition duration-300 ease-in-out">
                             View Via Google Maps </a>
                     </div>

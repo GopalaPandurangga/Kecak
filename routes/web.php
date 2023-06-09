@@ -9,6 +9,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\MainCastController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\TicketOrderController;
 use App\Http\Controllers\AboutController;
 
 /*
@@ -28,6 +29,8 @@ use App\Http\Controllers\AboutController;
 
 Route::get('/', [LandingPageController::class, 'content'] );
 Route::resource('content', LandingPageController::class);
+
+Route::resource('orderticket', TicketOrderController::class);
 
 Route::resource('cast', MainCastController::class);
 
@@ -67,7 +70,7 @@ Route::get('/pkgg', [PackageController::class, 'index'])->middleware('auth:sanct
 Route::resource('paket', PackageController::class);
 // contact
 Route::get('/kontak', [ContactController::class, 'index'])->middleware('auth:sanctum', 'verified')->name('kontak');
-Route::get('/order', [ContactController::class, 'kontak2'])->middleware('auth:sanctum', 'verified')->name('kontak2');
+Route::get('/order', [TicketOrderController::class, 'kontak2'])->middleware('auth:sanctum', 'verified')->name('kontak2');
 Route::resource('contact', ContactController::class);
 
 Route::get('/livewire',function(){

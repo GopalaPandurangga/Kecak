@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\TicketOrder;
 
 class Paket extends Model
 {
@@ -14,4 +15,9 @@ class Paket extends Model
     protected $fillable =[
         'package_id','name','rate','desc','location','photo'
     ];
+    public function ticketorder()
+    {
+        return $this->hasMany(Transaksi::class);
+      
+    }
 }

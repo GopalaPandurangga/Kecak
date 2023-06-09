@@ -21,10 +21,7 @@ class ContactController extends Controller
         
         return view('backpage.daftarcontact', compact('title', 'contact'));
     }
-    public function kontak2 (){
-        $contact = Contact::all();
-        return view('frontend.contact', compact('contact'));
-    }
+    
 
     /**
      * Show the form for creating a new resource.
