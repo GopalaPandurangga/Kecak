@@ -31,7 +31,7 @@
                         <tr class="text-lg text-left">
                             <th class="w-1"> Checklist </th>
                             <th> No </th>
-                            <th> Title </th>
+                            <th class="w-80"> Title </th>
                             <th class="w-80"> Description</th>
                             <th> Photo</th>
                             <th> Action</th>

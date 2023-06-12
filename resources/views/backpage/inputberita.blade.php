@@ -24,6 +24,14 @@
 
                     @endif 
                     <div class="w-full lg:w-2/3 lg:mx-auto">
+                    <div class="w-full px-4 mb-4">
+                            <label for="name"
+                                class="text-base font-bolf text-black dark:text-white dark:hover:text-primary hover:text-primary">Your
+                                Id
+                            </label>
+                            <input type="text" name="title" class="w-full bg-gray-100 text-black
+                                p-3 rounded-md focus:outline-none focus:ring-3 focus:border-primary" placeholder="">
+                        </div>
 
                         <div class="w-full px-4 mb-4">
                             <label for="name" class="text-base font-bolf text-black hover:text-primary">Visitors Name

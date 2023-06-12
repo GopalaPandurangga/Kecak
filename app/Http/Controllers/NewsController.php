@@ -20,9 +20,14 @@ class NewsController extends Controller
     }
     public function index2()
     {
-        $cast = News::all();
-        return response()->json($cast);
+        $news = News::all();
+        return response()->json($news);
 
+    }
+    public function news()
+    {
+        $news = News::all();
+        return view ('frontend.news', compact('news'));
     }
 
     /**
@@ -32,7 +37,8 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        $title = "Input Data";
+        return view('backpage.inputnews', compact('title'));
     }
 
     /**
@@ -61,17 +67,9 @@ class NewsController extends Controller
                 'message'=>'success',
                 'body'=>$response
             ]);
-            // if ($response!=null){
-            //     return response()->json([
-            //         'success'=> true,
-            //         'message'=>'success'
-            //     ]);
-            // }else{
-            //     return response()->json([
-            //         'success'=> false,
-            //         'message'=>'tidak tersimpan'
-            //     ]);
-            // }
+           
+            return redirect('/news')->with('success','Data Successfully save');
+            
     
             } catch (\Throwable $th) {
                 return response()->json([
@@ -88,9 +86,10 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($news_id)
     {
-        //
+        $news = News::findOrFail($news_id);
+        return view ('frontend.detailnews', compact('news'));
     }
 
     /**
@@ -101,7 +100,10 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news=News::find($id);
+        $title = "Edit Data";
+        
+        return view('backpage.inputnews', compact('title', 'news'));
     }
 
     /**
@@ -113,7 +115,28 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $message=[
+            'required'=> 'attribute must complete',
+            'date'=> 'attribute must date',
+            'numeric'=> 'attribute must number',
+        ];
+        $validasi=$request -> validate([
+            'title'=>'required|unique:beritas|max:255',
+            'description'=>'required',
+            
+        ],$message);
+        
+        if($request->hasFile('photo')){
+            $fileName=time().$request->file('photo')->getClientOriginalName();
+            $path = $request -> file('photo')->storeAs('covers', $fileName);
+            $validasi['photo']=$path;
+            $news=News::find($id);
+            Storage::delete($news->photo);
+        }
+        
+        $validasi['user_id']=Auth::id();
+        News::where('id', $id)->update($validasi);
+        return redirect('/news')->with('success','Data Successfully Update');
     }
 
     /**

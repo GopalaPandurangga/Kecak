@@ -71,7 +71,7 @@
 
                 <div class="w-3/4 p-8 pl-20 pr-20">
                     <h2 class="text-3xl font-bold mb-8">Order Form</h2>
-                    <form action="{{ route('orderticket.store') }}" method="POST">
+                    <form action="{{ route('orderticket.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-4">
                             <label for="name" class="text-lg">Name:</label>
@@ -113,16 +113,20 @@
                             Now</button>
                     </form>
                 </div>
-               
-            </div>
-            <script>
+
+                <script>
                     function updatePrice() {
                         var packageSelect = document.getElementById('package');
-                        var priceInput = document.getElementById('price');
                         var selectedPackage = packageSelect.options[packageSelect.selectedIndex];
-                        var price = parseFloat(selectedPackage.dataset.price);
+                        var priceElement = document.getElementById('price');
 
-                        priceInput.value = isNaN(price) ? '' : price.toFixed(2);
+                        if (selectedPackage) {
+                            var price = parseFloat(selectedPackage.dataset.price);
+
+                            priceElement.value = isNaN(price) ? '' : price.toFixed(2);
+                        } else {
+                            priceElement.value = '';
+                        }
                         updateTotal();
                     }
 
@@ -138,9 +142,11 @@
                     }
 
                 </script>
+            </div>
+
 
         </section>
-
+        
         <!-- Contact End -->
 
     </body>

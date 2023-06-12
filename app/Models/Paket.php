@@ -17,7 +17,7 @@ class Paket extends Model
     ];
     public function ticketorder()
     {
-        return $this->hasMany(Transaksi::class);
+        return $this->hasMany(TicketOrder::class);
       
     }
 }

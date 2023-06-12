@@ -1,15 +1,18 @@
 <x-template-layout>
 
+
     <!DOCTYPE html>
     <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 
     <head>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="build/assets/app.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-        
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
         <title>Kecak Fire and Trance Dance</title>
 
         <!-- Fonts -->
@@ -25,7 +28,7 @@
         <!-- Hero-->
         <section id="home" class="  dark:bg-dark pt-36 py-40  z-10 ">
             <div class="container ">
-                <div class=" flex flex-col-reverse lg:flex-row text-center lg:text-left">
+                <div class=" flex flex-col-reverse lg:flex-row text-center lg:text-left" data-aos="fade-up" data-aos-duration="2000">
                     <div class="w-full dark:text-white self-center md:flex-1 md:mr-10  my-20 lg:w-1/2">
                         <h1 class="font-pt-serif text-5xl font-bold mb-7">
                             {{$data1->title}}
@@ -53,13 +56,14 @@
         <!--galery-->
         <section id="galery" class="bg-dark dark:bg-white text-white sectionSize ">
             <div class="container ">
-                <div class="secondaryTitle dark:text-black bg-underline2 bg-100% text-center font-bold">
+                <div class="secondaryTitle dark:text-black bg-underline2 bg-100% text-center font-bold"
+                    data-aos="fade-up">
                     <h2>Welcome to our Galery</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-20 ">
 
-                    <div class="relative overflow-hidden group mr-[30px] ">
-                        <div
+                    <div data-aos="zoom-in" data-aos-duration="1000"class="relative overflow-hidden group mr-[30px] ">
+                        <div 
                             class="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-2xl group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
                             <img src='dist/assets/rama.jpeg' alt="rama sinta"
                                 class="h-80 w-full object-cover object-center">
@@ -67,7 +71,7 @@
 
                     </div>
 
-                    <div class="relative overflow-hidden group mr-[30px]">
+                    <div data-aos="zoom-in" data-aos-duration="1000" class="relative overflow-hidden group mr-[30px]">
                         <div
                             class="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-2xl group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
                             <img src='dist/assets/hanoman.jpeg' alt="hanoman"
@@ -76,7 +80,7 @@
 
                     </div>
 
-                    <div class="relative overflow-hidden group mr-[30px]">
+                    <div data-aos="zoom-in" data-aos-duration="1000" class="relative overflow-hidden group mr-[30px]">
                         <div
                             class="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-2xl group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
                             <img src='dist/assets/rahwana.jpeg' alt="rahwana"
@@ -108,13 +112,13 @@
         <!--galery ends-->
 
         <!--maincast-->
-        <section id="maincast" class="sectionSize pt-40 dark:bg-dark">
-            <div class="container ">
+        <section id="maincast" class="sectionSize pt-20 dark:bg-dark">
+            <div class="container " data-aos="zoom-in" data-aos-duration="1000">
                 <div class="secondaryTitle bg-underline2 bg-100% font-bold text-black text-center dark:text-white">
                     <h2>Main Cast in the Kecak Show</h2>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-20 ">
-                @foreach ($cast as $datas)
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-10 ">
+                    @foreach ($cast as $datas)
                     <div class="relative overflow-hidden group mr-[30px] ">
                         <div
                             class="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-2xl group-hover:opacity-75 transition duration-300 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
@@ -131,7 +135,7 @@
                             {{$datas->desc}}</p>
                     </div>
 
-                    
+
                     @endforeach
 
                 </div>
@@ -141,7 +145,7 @@
 
         <!-- package -->
         <section id="package" class=" dark:bg-dark">
-            <div class="container items-center justify-center mx-auto py-36">
+            <div class="container items-center justify-center mx-auto py-36" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="flex flex-col items-center gap-3">
                     <h1 class="text-black dark:text-white font-pt-serif font-bold text-3xl mb-2">Package</h1>
                     <h1 class=" font-sans font-semibold text-3xl text-center text-gray-500 dark:text-white mb-4 ">
@@ -182,14 +186,14 @@
         <!-- package -->
 
         <!-- Location-->
-        <section id="location" class="dark:bg-dark">
-            <div class="container ">
+        <section id="location" class="dark:bg-dark mb-20" >
+            <div class="container " data-aos="slide-right" data-aos-duration="1000">
                 <div class="secondaryTitle bg-underline2 bg-100% font-bold text-black dark:text-white text-center">
                     <h2>Location of the show</h2>
                 </div>
 
                 <div class=" flex flex-wrap lg:text-left text-center ">
-                    <div class=" max-w-full self-end px-20 lg:w-1/2 lg:bottom-10 ">
+                    <div class=" max-w-full self-end px-10 lg:w-1/2 lg:bottom-10 ">
                         <div class="relative rounded-3xl mt-10 my-2 lg:my-10 ">
                             <img src="{{asset('storage/'.$data2->photo)}}" alt="taman"
                                 class="w-max rounded-3xl mx-auto">
@@ -216,8 +220,8 @@
         <!-- Location end-->
 
         <!-- Testimonial -->
-        <section id="testimonial" class="sectionSize dark:bg-dark">
-            <div class="container  ">
+        <section id="testimonial" class=" dark:bg-dark">
+            <div class="container  " data-aos="fade-left" data-aos-duration="1000">
                 <div class=" flex  flex-wrap text-center lg:text-left">
                     <div class="w-full self-center dark:text-white md:flex-1 md:mr-10 mx-10  lg:w-1/2">
                         <h1 class="font-pt-serif text-lg font-bold mb-5">
@@ -258,7 +262,7 @@
 
         <!--Should-->
         <section id="should" class="dark:bg-dark ">
-            <div class="container">
+            <div class="container" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="secondaryTitle text-center dark:text-white lg:text-5xl text-xl bg-100% font-bold">
                     <h2 class="mb-10">{{$data3->title}}</h2>
                     <p class="text-xs lg:text-xl font-normal text-center ">{{$data3->desc}}</p>
@@ -276,7 +280,7 @@
 
         <!-- Comment Session -->
         <section id="Comment" class="py-20 px-10 lg:px-20 dark:bg-dark">
-            <div class="container">
+            <div class="container" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="w-full px-4">
                     <div class="secondaryTitle text-lg lg:text-3xl font-bold text-black dark:text-white text-center">
                         <h2>Write Your Opinion About The Show</h2><br>
@@ -353,67 +357,73 @@
         </section>
         <!-- Comment Session End -->
         <!-- calender -->
-        <section class ="py-20">
-        <div class="container mx-auto mt-8">
-    <h1 class="text-4xl text-center font-bold mb-8 font-montserrat">Kalender</h1>
+        <section class="py-20">
+            <div class="container mx-auto mt-8" data-aos="zoom-in" data-aos-duration="1000">
+                <h1 class="text-4xl text-center font-bold mb-8 font-montserrat">Kalender</h1>
 
-    <div class="flex justify-center mb-4">
-      <div class="w-64">
-        <div class="flex items-center justify-between mb-2">
-          <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-1 px-2 rounded-full">&lt;</button>
-          <h2 class="text-xl font-bold">June 2023</h2>
-          <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-1 px-2 rounded-full">&gt;</button>
-        </div>
-        <div class="flex flex-wrap" id="calendar"></div>
-      </div>
-    </div>
+                <div class="flex justify-center mb-4">
+                    <div class="w-64">
+                        <div class="flex items-center justify-between mb-2">
+                            <button
+                                class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-1 px-2 rounded-full">&lt;</button>
+                            <h2 class="text-xl font-bold">June 2023</h2>
+                            <button
+                                class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-1 px-2 rounded-full">&gt;</button>
+                        </div>
+                        <div class="flex flex-wrap" id="calendar"></div>
+                    </div>
+                </div>
 
-    <p class="text-center" id="currentDate"></p>
+                <p class="text-center" id="currentDate"></p>
 
-    <script>
-        // kalender
-// Membuat objek Date baru
-var currentDate = new Date();
+                <script>
+                    // kalender
+                    // Membuat objek Date baru
+                    var currentDate = new Date();
 
-// Mendapatkan tanggal saat ini
-var date = currentDate.getDate();
+                    // Mendapatkan tanggal saat ini
+                    var date = currentDate.getDate();
 
-// Mendapatkan hari saat ini (dalam angka, dimulai dari 0 untuk Minggu)
-var day = currentDate.getDay();
+                    // Mendapatkan hari saat ini (dalam angka, dimulai dari 0 untuk Minggu)
+                    var day = currentDate.getDay();
 
-// Daftar nama hari
-var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                    // Daftar nama hari
+                    var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-// Mendapatkan nama hari berdasarkan angka hari
-var dayName = daysOfWeek[day];
+                    // Mendapatkan nama hari berdasarkan angka hari
+                    var dayName = daysOfWeek[day];
 
-// Menampilkan tanggal dan hari saat ini
-document.getElementById('currentDate').textContent = 'Today is ' + dayName + ', ' + currentDate.toLocaleString('default', { month: 'long' }) + ' ' + date + ', ' + currentDate.getFullYear();
+                    // Menampilkan tanggal dan hari saat ini
+                    document.getElementById('currentDate').textContent = 'Today is ' + dayName + ', ' + currentDate
+                        .toLocaleString('default', {
+                            month: 'long'
+                        }) + ' ' + date + ', ' + currentDate.getFullYear();
 
-// Mengisi kalender dengan tanggal
-var calendar = document.getElementById('calendar');
+                    // Mengisi kalender dengan tanggal
+                    var calendar = document.getElementById('calendar');
 
-// Mendapatkan jumlah hari dalam bulan ini
-var totalDays = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+                    // Mendapatkan jumlah hari dalam bulan ini
+                    var totalDays = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
 
-// Menambahkan elemen untuk setiap tanggal
-for (var i = 1; i <= totalDays; i++) {
-  var dayElement = document.createElement('div');
-  dayElement.className = 'w-1/7 p-1';
+                    // Menambahkan elemen untuk setiap tanggal
+                    for (var i = 1; i <= totalDays; i++) {
+                        var dayElement = document.createElement('div');
+                        dayElement.className = 'w-1/7 p-1';
 
-  var dateElement = document.createElement('div');
-  dateElement.className = 'bg-white rounded-lg p-2';
-  dateElement.textContent = i;
+                        var dateElement = document.createElement('div');
+                        dateElement.className = 'bg-white rounded-lg p-2';
+                        dateElement.textContent = i;
 
-  if (i === date) {
-    dateElement.classList.add('today');
-  }
+                        if (i === date) {
+                            dateElement.classList.add('today');
+                        }
 
-  dayElement.appendChild(dateElement);
-  calendar.appendChild(dayElement);
-}
-    </script>
-  </div>
+                        dayElement.appendChild(dateElement);
+                        calendar.appendChild(dayElement);
+                    }
+
+                </script>
+            </div>
 
 
 
@@ -429,6 +439,11 @@ for (var i = 1; i <= totalDays; i++) {
         <!-- Back To Start end -->
 
         <script src="resources/js/app.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+
+        </script>
 
     </body>
 </x-template-layout>

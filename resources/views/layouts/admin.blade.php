@@ -74,7 +74,7 @@
                 <i class="px-2"></i>
                 Contact
             </a>
-            <a href="pkgg"
+            <a href="/pkgg"
                 class="flex items-center bg-white shadow-xl mx-5 rounded-xl h-12  text-black hover:bg-gray-800 hover:text-white transition duration-300  py-4 pl-6 nav-item mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                     <path
@@ -83,7 +83,7 @@
                 <i class="px-2"></i>
                 Package
             </a>
-            <a href="berita"
+            <a href="/berita"
                 class="flex items-center bg-white shadow-xl mx-5 rounded-xl h-12 text-black hover:bg-gray-800 hover:text-white transition duration-300  py-4 pl-6 nav-item mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                     <path
@@ -103,7 +103,7 @@
                 <i class="px-2"></i>
                 Main Cast
             </a>
-            <a href="/cast"
+            <a href="/news"
                 class="flex items-center bg-white shadow-xl mx-5 rounded-xl h-12 text-black hover:bg-gray-800 hover:text-white transition duration-300 py-4 pl-6 nav-item mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                     <path

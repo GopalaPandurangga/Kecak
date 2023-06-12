@@ -13,11 +13,11 @@ class TicketOrder extends Model
     protected $table="ticket_orders";
     public $timestamps = false;
     protected $fillable =[
-        'nama_pemesan','name','quantity','rate'
+        'nama_pemesan','name','quantity','rate','total'
     ];
     public function paket()
     {
-        return $this->belongsTo(Paket::class);
+        return $this->belongsTo(Paket::class) ;
       
     }
 

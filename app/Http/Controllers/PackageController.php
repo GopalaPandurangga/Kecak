@@ -120,11 +120,11 @@ class PackageController extends Controller
      */
     public function edit($id)
     {
-        $comunities = comunity::all();
-        $package=Package::find($id);
+        
+        $package=Paket::find($id);
         $title = "Edit Data";
         
-        return view('backpage.inputpackage', compact('title', 'package','comunities'));
+        return view('backpage.inputpackage', compact('title', 'package'));
     }
 
     /**

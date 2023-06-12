@@ -53,6 +53,7 @@ class TicketOrderController extends Controller
             'name'=>'required',
             'quantity'=>'required',
             'rate'=>'required',
+            'total'=>'required',
         ],$message);
         
         Paket::create($validasi);

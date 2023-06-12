@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('name')->nullable();
             $table->string('quantity')->nullable();
             $table->string('rate')->nullable();
+            $table->string('total')->nullable();
             $table->timestamps();
         });
     }

@@ -59,7 +59,9 @@ class LandingPageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    
+   
+     public function store(Request $request)
     {
         
         $validasi=$request -> validate([
@@ -68,6 +70,10 @@ class LandingPageController extends Controller
             'desc'=>'required',
             'photo'=>'required|mimes:jpg,bmp,png,webp'
         ]);
+        $validasi['user_id']=Auth::id();
+        // $validasi['cover']=$path;
+        LandingPage::create($validasi);
+        return redirect('backpage.daftarcontent')->with('success','Data Successfully save');
         
         try {
             //  $fileName = time().$request->file('cover')->getClientOriginalName();

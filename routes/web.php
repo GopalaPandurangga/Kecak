@@ -27,19 +27,28 @@ use App\Http\Controllers\AboutController;
 //     return view('welcome');
 // });
 
+//home
 Route::get('/', [LandingPageController::class, 'content'] );
 Route::resource('content', LandingPageController::class);
 
 Route::resource('orderticket', TicketOrderController::class);
 
+//maincast
 Route::resource('cast', MainCastController::class);
 
+//latestnews
 Route::resource('news', NewsController::class);
+Route::get('/latestnews', [NewsController::class, 'news'])->name('news');
+Route::get('/detailnews/{news_id}', [NewsController::class, 'show'])->name('detailnews');
 
+//package
 Route::get('/package', [PackageController::class, 'package'])->name('package');
 Route::get('/detailpackage/{package_id}', [PackageController::class, 'show'])->name('detailpackage');
 
+//about
 Route::get('/about', [AboutController::class, 'about'])->name('about');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -55,7 +64,7 @@ Route::middleware('auth')->group(function () {
 
 // home controller
 
-Route::get('/kontakkk', [HomeController::class, 'kontakkk'])->name('kontakkk');
+
 
 Route::get('/galery', [HomeController::class, 'galery'])->name('galery');
 
@@ -68,6 +77,7 @@ Route::resource('berita', BeritaController::class);
 Route::get('/pkgg', [PackageController::class, 'index'])->middleware('auth:sanctum', 'verified')->name('pkgg');
 
 Route::resource('paket', PackageController::class);
+
 // contact
 Route::get('/kontak', [ContactController::class, 'index'])->middleware('auth:sanctum', 'verified')->name('kontak');
 Route::get('/order', [TicketOrderController::class, 'kontak2'])->middleware('auth:sanctum', 'verified')->name('kontak2');

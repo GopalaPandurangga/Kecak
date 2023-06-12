@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" >
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -22,7 +22,8 @@
         <div class="container  ">
             <div class="flex items-center justify-between relative">
                 <div class="">
-                    <a href="landingpage" class="font-bold font-pt-serif text-2xl px-10 lg:px-0 text-black dark:text-white block py-4">Kecak</a>
+                    <a href="landingpage"
+                        class="font-bold font-pt-serif text-2xl px-10 lg:px-0 text-black dark:text-white block py-4">Kecak</a>
                 </div>
                 <div class="flex items-center px-10 lg:px-2">
                     <div id="hamburger" name="hamburger" type="button" class="block lg:hidden absolute right-10">
@@ -43,13 +44,15 @@
                                     class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex">Home</a>
                             </li>
                             <li class="group">
-                            <x-dropdown align="right" width="40">
+                                <x-dropdown align="right" width="40">
                                     <x-slot name="trigger">
                                         <button
                                             class=" items-center py-2 mx-4 flex border border-transparent text-sm leading-4 font-medium rounded-md text-black  dark:text-white hover:text-primary transition duration-300 focus:outline-none  ease-in-out ">
-                                            <div><h1>About</h1></div>
+                                            <div>
+                                                <h1>About</h1>
+                                            </div>
 
-                                            <div id=""class="ml-1">
+                                            <div id="" class="ml-1">
                                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20">
                                                     <path fill-rule="evenodd"
@@ -70,9 +73,9 @@
                                         <x-dropdown-link :href="route('testi')">
                                             {{ __('Testimonial') }}
                                         </x-dropdown-link>
-                                        
 
-                                        
+
+
                                     </x-slot>
                                 </x-dropdown>
                             </li>
@@ -81,32 +84,76 @@
                                     class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex ">Package</a>
                             </li>
                             <li class="group">
-                                <a href="/package"
-                                    class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex ">Latest News</a>
+                                <a href="/latestnews"
+                                    class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex ">Latest
+                                    News</a>
                             </li>
-                            
+
                             <!-- <li class="group">
                                 <a href="/kontak2"
                                     class="text-black dark:text-white text-sm hover:text-primary transition duration-300 py-2 mx-4 flex ">Contact</a>
                             </li> -->
-                            
+
                             <li class="flex items-center">
                                 <div class="flex mx-4 py-2">
                                     <span class="mr-2 text-sm text-black dark:text-white">Light</span>
                                     <input type="checkbox" class="hidden" id="toggle">
                                     <label for="toggle">
-                                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 dark:bg-green-500 p-1">
-                                            <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+                                        <div
+                                            class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 dark:bg-green-500 p-1">
+                                            <div
+                                                class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
                                             </div>
                                         </div>
                                     </label>
                                     <span class="ml-2 text-sm text-black dark:text-white dark ">Dark</span>
                                 </div>
                             </li>
-                            
+                            <div class="hidden sm:flex sm:items-center ml-0">
+                                <x-dropdown align="right" width="48">
+                                    <x-slot name="trigger">
+                                        <button
+                                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                            <div class="ml-1">
+                                                 <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 32 32" viewBox="0 0 32 32" id="profile"><circle cx="16" cy="7.46" r="6.96" transform="rotate(-9.217 16 7.46)"/>
+                                                    <path d="M0.78998,24.04999C0.78998,28.15997,4.13,31.5,8.23999,31.5h15.52002c4.10999,0,7.45001-3.34003,7.45001-7.45001s-3.34003-7.45001-7.45001-7.45001H8.23999C4.13,16.59998,0.78998,19.94,0.78998,24.04999z"/></svg>
+                                            </div>
 
-                          
-                            
+                                            <div class="ml-1">
+                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd"
+                                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </x-slot>
+
+                                    <x-slot name="content">
+                                    <x-dropdown-link :href="route('login')">
+                                            {{ __('Login') }}
+                                        </x-dropdown-link>
+                                        <x-dropdown-link :href="route('profile.edit')">
+                                            {{ __('Profile') }}
+                                        </x-dropdown-link>
+
+                                        <!-- Authentication -->
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+
+                                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                                {{ __('Log Out') }}
+                                            </x-dropdown-link>
+                                        </form>
+                                    </x-slot>
+                                </x-dropdown>
+                            </div>
+
+
+
+
                         </ul>
                     </nav>
 
@@ -134,7 +181,7 @@
     <main>
         {{ $slot }}
     </main>
-    <section id="footer"  >
+    <section id="footer">
 
         <footer class="bg-dark dark:bg-slate-100">
             <div class="grid grid-cols-2 gap-8 py-8 px-6 mx-6 md:grid-cols-4">
@@ -240,9 +287,10 @@
 
     <script src="public/build/assets/app.js"></script>
     <script>
-        document.querySelector('#toggle').addEventListener('click', function(){
-        document.documentElement.classList.toggle('dark');
+        document.querySelector('#toggle').addEventListener('click', function () {
+            document.documentElement.classList.toggle('dark');
         });
+
     </script>
 </body>
 

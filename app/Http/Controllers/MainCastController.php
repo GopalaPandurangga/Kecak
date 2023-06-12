@@ -33,7 +33,8 @@ class MainCastController extends Controller
      */
     public function create()
     {
-        //
+        $title = "Input Data";
+        return view('backpage.inputcast', compact('title'));
     }
 
     /**
