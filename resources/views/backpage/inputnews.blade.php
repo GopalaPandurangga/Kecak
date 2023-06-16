@@ -44,7 +44,7 @@
               <label class="block text-sm font-medium text-gray-700">
                 Cover photo</label>
               <div class="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
-                <div class="space-y-1 text-center">
+                <div class="space-y-1 text-center w-80">
                  @if (isset($news) && $news->photo!='')
                  <img src="{{asset('storage/'.$news->photo)}}" class="w-25 rounded-xl" alt="">
                  @else

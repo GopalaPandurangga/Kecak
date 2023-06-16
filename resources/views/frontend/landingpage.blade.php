@@ -186,7 +186,7 @@
         <!-- package -->
 
         <!-- Location-->
-        <section id="location" class="dark:bg-dark mb-20" >
+        <section id="location" class="dark:bg-dark " >
             <div class="container " data-aos="slide-right" data-aos-duration="1000">
                 <div class="secondaryTitle bg-underline2 bg-100% font-bold text-black dark:text-white text-center">
                     <h2>Location of the show</h2>
@@ -221,7 +221,7 @@
 
         <!-- Testimonial -->
         <section id="testimonial" class=" dark:bg-dark">
-            <div class="container  " data-aos="fade-left" data-aos-duration="1000">
+            <div class="container pt-20  " data-aos="fade-left" data-aos-duration="1000">
                 <div class=" flex  flex-wrap text-center lg:text-left">
                     <div class="w-full self-center dark:text-white md:flex-1 md:mr-10 mx-10  lg:w-1/2">
                         <h1 class="font-pt-serif text-lg font-bold mb-5">
@@ -262,7 +262,7 @@
 
         <!--Should-->
         <section id="should" class="dark:bg-dark ">
-            <div class="container" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="container pt-20" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="secondaryTitle text-center dark:text-white lg:text-5xl text-xl bg-100% font-bold">
                     <h2 class="mb-10">{{$data3->title}}</h2>
                     <p class="text-xs lg:text-xl font-normal text-center ">{{$data3->desc}}</p>

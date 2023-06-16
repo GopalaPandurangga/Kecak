@@ -9,6 +9,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\MainCastController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\TicketOrderController;
 use App\Http\Controllers\AboutController;
 
@@ -62,12 +63,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// home controller
 
+Route::get('/galery', [GaleryController::class, 'galery']);
 
-
-Route::get('/galery', [HomeController::class, 'galery'])->name('galery');
-
+Route::resource('/daftargalery', GaleryController::class);
 
 // berita controller
 Route::get('/testi', [BeritaController::class, 'testi'])->name('testi');

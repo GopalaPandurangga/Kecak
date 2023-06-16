@@ -38,7 +38,7 @@
                             </a>
                         </h3>
                         <p class ="text-primary pl-4 font-bold mb-4 ">
-                        {{$datas->rate}}
+                        Rp {{$datas->rate}}
                         </p>
                         <p class="text-base pl-4   pr-4 font-semibold text-gray-900">
                         {{$datas->desc}}

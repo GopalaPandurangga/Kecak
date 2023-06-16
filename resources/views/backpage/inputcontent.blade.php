@@ -7,7 +7,7 @@
 
     <div>
         <div class="shadow px-6 py-4 bg-white rounded sm:px-1 sm:py-1">
-        <form  action="{{(isset($content))?route('content.update', $content->id) :route('content.store')}}" method="post" enctype="multipart/form-data">
+        <form  action="{{(isset($content))?route('content.update', $content->landingpages_id) :route('content.store')}}" method="post" enctype="multipart/form-data">
           @csrf
           @if (isset($content))
           @method('PUT')
@@ -52,7 +52,7 @@
               <label class="block text-sm font-medium text-gray-700">
                 Cover photo</label>
               <div class="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
-                <div class="space-y-1 text-center">
+                <div class="space-y-1 text-center w-80">
                  @if (isset($content) && $content->photo!='')
                  <img src="{{asset('storage/'.$content->photo)}}" class="w-25 rounded-xl" alt="">
                  @else

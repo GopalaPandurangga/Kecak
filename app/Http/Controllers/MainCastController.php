@@ -47,7 +47,7 @@ class MainCastController extends Controller
     {
         $validasi=$request -> validate([
             
-            'title'=>'required',
+            'title'=>'required|unique:main_casts',
             'desc'=>'required',
             'photo'=>'required|mimes:jpg,bmp,png,webp'
         ]);
@@ -101,9 +101,12 @@ class MainCastController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($maincast_id)
     {
-        //
+        $cast=MainCast::find($maincast_id);
+        $title = "Edit Data";
+        
+        return view('backpage.inputcast', compact('title', 'cast'));
     }
 
     /**
@@ -115,7 +118,46 @@ class MainCastController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validasi=$request -> validate([
+            
+            'title'=>'required|unique:main_casts',
+            'desc'=>'required',
+            'photo'=>'required|mimes:jpg,bmp,png,webp'
+        ]);
+        
+        try {
+            //  $fileName = time().$request->file('cover')->getClientOriginalName();
+            if($request->file('photo')){
+                $path = $request -> file('photo')->store('covers');
+                $validasi['photo']=$path;
+            }
+            
+            $response = MainCast::find($id);
+            $response -> update($validasi);
+            return response()->json([
+                'success'=> true,
+                'message'=>'success',
+                'body'=>$response
+            ]);
+            // if ($response!=null){
+            //     return response()->json([
+            //         'success'=> true,
+            //         'message'=>'success'
+            //     ]);
+            // }else{
+            //     return response()->json([
+            //         'success'=> false,
+            //         'message'=>'tidak tersimpan'
+            //     ]);
+            // }
+    
+            } catch (\Throwable $th) {
+                return response()->json([
+                    'success'=> false,
+                    'message'=>'error',
+                    'errors'=>$th->getMessage()
+                ]);
+            }
     }
 
     /**

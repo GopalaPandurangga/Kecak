@@ -52,7 +52,7 @@
                     <div class="w-full self-center dark:text-white md:flex-1 md:mr-10 mx-20 my-20 lg:my-20 lg:w-1/2">
                         <h1 class="text-4xl font-bold mb-4 font-pt-serif">{{$data->name}}</h1>
                         <div class="">
-                            <h2 class="text-2xl font-bold text-primary ">{{$data->rate}}</h2>
+                            <h2 class="text-2xl font-bold text-primary ">Rp {{$data->rate}}</h2>
                         </div>
                         <div class="flex items-center mr-2 mb-8">
                             <span class="text-yellow-400">★</span>

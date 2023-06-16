@@ -71,9 +71,9 @@
                                 Cover photo</label>
                             <div
                                 class="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
-                                <div class="space-y-1 text-center">
-                                    @if (isset($package) && $package->feature_img!='')
-                                    <img src="{{asset('storage/'.$package->feature_img)}}"
+                                <div class="space-y-1 text-center w-80">
+                                    @if (isset($package) && $package->photo!='')
+                                    <img src="{{asset('storage/'.$package->photo)}}"
                                         class="w-25 rounded rounded-xl" alt="">
                                     @else
                                     <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none"

@@ -26,7 +26,7 @@ class PackageController extends Controller
 
     public function index2()
     {
-        $package = Paket::all();
+        $package = Paket::paginate(2);
         return response()->json($package);
     }
 
@@ -59,7 +59,6 @@ class PackageController extends Controller
     {
 
         $validasi=$request -> validate([
-            'packages_id'=>'required',
             'name'=>'required',
             'rate'=>'required',
             'desc'=>'required',
@@ -78,17 +77,7 @@ class PackageController extends Controller
                 'message'=>'success',
                 'body'=>$response
             ]);
-            // if ($response!=null){
-            //     return response()->json([
-            //         'success'=> true,
-            //         'message'=>'success'
-            //     ]);
-            // }else{
-            //     return response()->json([
-            //         'success'=> false,
-            //         'message'=>'tidak tersimpan'
-            //     ]);
-            // }
+            
     
             } catch (\Throwable $th) {
                 return response()->json([

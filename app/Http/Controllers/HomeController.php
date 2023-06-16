@@ -12,13 +12,9 @@ public function index (){
 }
 
 
-public function detailpackage (){
-    return view ('frontend.detailpackage');
-}
 
-public function galery (){
-    return view ('frontend.galery');
-}
+
+
 
 
 

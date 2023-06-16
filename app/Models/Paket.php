@@ -13,7 +13,7 @@ class Paket extends Model
     protected $table="pakets";
     public $timestamps = false;
     protected $fillable =[
-        'package_id','name','rate','desc','location','photo'
+       'name','rate','desc','location','photo'
     ];
     public function ticketorder()
     {

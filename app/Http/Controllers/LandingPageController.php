@@ -125,9 +125,12 @@ class LandingPageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($landingpages_id)
     {
-        //
+        $content=LandingPage::find($landingpages_id);
+        $title = "Edit Data";
+        
+        return view('backpage.inputcontent', compact('title', 'content'));
     }
 
     /**
@@ -139,7 +142,50 @@ class LandingPageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validasi=$request -> validate([
+            'landingpages_id'=>'required',
+            'title'=>'required',
+            'desc'=>'required',
+            'photo'=>'required|mimes:jpg,bmp,png,webp'
+        ]);
+        $validasi['user_id']=Auth::id();
+        // $validasi['cover']=$path;
+        LandingPage::create($validasi);
+        return redirect('backpage.daftarcontent')->with('success','Data Successfully save');
+        
+        try {
+            //  $fileName = time().$request->file('cover')->getClientOriginalName();
+            if($request->file('photo')){
+                $path = $request -> file('photo')->store('covers');
+                $validasi['photo']=$path;
+            }
+            
+            $response = LandingPage::find($id);
+            $response -> update($validasi);
+            return response()->json([
+                'success'=> true,
+                'message'=>'success',
+                'body'=>$response
+            ]);
+            // if ($response!=null){
+            //     return response()->json([
+            //         'success'=> true,
+            //         'message'=>'success'
+            //     ]);
+            // }else{
+            //     return response()->json([
+            //         'success'=> false,
+            //         'message'=>'tidak tersimpan'
+            //     ]);
+            // }
+    
+            } catch (\Throwable $th) {
+                return response()->json([
+                    'success'=> false,
+                    'message'=>'error',
+                    'errors'=>$th->getMessage()
+                ]);
+            }
     }
 
     /**
